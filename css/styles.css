@@ -395,7 +395,7 @@ p {
 .mobile-menu-toggle {
     display: none;
     background: none;
-    border: none;
+    border: 2px solid var(--accent-gold);
     color: var(--text-light);
     font-size: var(--font-xl);
     cursor: pointer;
@@ -406,11 +406,14 @@ p {
     justify-content: center;
     min-width: 44px;
     min-height: 44px;
+    position: relative;
+    z-index: 1001;
 }
 
 .mobile-menu-toggle:hover {
     background: rgba(212, 175, 55, 0.1);
     color: var(--accent-gold);
+    border-color: var(--accent-gold-light);
 }
 
 .hamburger-icon {
@@ -424,10 +427,11 @@ p {
 
 .hamburger-icon span {
     display: block;
-    height: 2px;
+    height: 3px;
     background: currentColor;
-    border-radius: 2px;
+    border-radius: 3px;
     transition: all var(--transition-normal);
+    width: 100%;
 }
 
 .mobile-menu-toggle.active .hamburger-icon span:nth-child(1) {
@@ -566,55 +570,156 @@ p {
         gap: var(--spacing-md);
     }
     
-    .main-navigation {
+    .nav-links {
         gap: var(--spacing-md);
-        flex-direction: row;
-        flex-wrap: nowrap;
     }
     
     .nav-link {
         font-size: var(--font-sm);
-        padding: var(--spacing-sm) var(--spacing-md);
-    }
-    
-    .cta-button {
-        min-width: 70px;
-        font-size: 0.85rem;
         padding: var(--spacing-xs) var(--spacing-sm);
     }
     
-    .cta-button.register {
-        min-width: 90px;
+    .cta-button {
+        font-size: var(--font-sm);
+        padding: var(--spacing-xs) var(--spacing-md);
     }
 }
 
 @media (max-width: 768px) {
     .mobile-menu-toggle {
-        display: flex;
+        display: flex !important;
     }
     
-    .main-navigation,
-    .action-buttons {
+    /* Hide desktop navigation on mobile */
+    .nav-links {
         display: none !important;
     }
     
-    .header-container {
-        padding: 0 var(--spacing-sm);
+    .header-actions .cta-button:not(.mobile-menu-toggle) {
+        display: none;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-md);
+        max-width: 100%;
+    }
+    
+    .section-padding {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    /* Grid fixes */
+    .features-grid,
+    .highlights-grid,
+    .testimonials-grid,
+    .cast-grid,
+    .success-grid,
+    .seating-grid,
+    .process-grid,
+    .tips-grid,
+    .virtual-grid,
+    .calendar-grid,
+    .community-stats {
+        grid-template-columns: 1fr;
         gap: var(--spacing-md);
-        justify-content: space-between;
     }
     
-    .brand-identity {
-        flex: 0 1 auto;
+    /* Two-column layouts */
+    .venue-content,
+    .offers-content,
+    .training-content,
+    .community-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
     }
     
-    .brand-name {
-        font-size: var(--font-lg);
+    /* Typography fixes */
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: var(--spacing-md);
     }
     
-    .brand-logo {
-        width: 35px;
-        height: 35px;
+    h1 { font-size: var(--font-3xl); }
+    h2 { font-size: var(--font-2xl); }
+    h3 { font-size: var(--font-xl); }
+    h4 { font-size: var(--font-lg); }
+    
+    /* Button fixes */
+    .cta-button {
+        font-size: var(--font-base);
+        padding: var(--spacing-sm) var(--spacing-lg);
+        min-height: 44px;
+    }
+    
+    /* Card fixes */
+    .cast-card,
+    .success-card,
+    .seating-card,
+    .tip-card,
+    .virtual-card,
+    .season-card,
+    .process-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Image fixes */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .cast-image img,
+    .venue-image img,
+    .training-image img,
+    .community-image img,
+    .offers-image img {
+        height: 250px;
+    }
+    
+    /* Form fixes */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Hero sections */
+    .hero-title {
+        font-size: var(--font-3xl) !important;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-base);
+    }
+    
+    /* Footer fixes */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    /* Map fixes */
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    /* Spacing fixes */
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .section-header h2 {
+        font-size: var(--font-2xl);
+    }
+    
+    .section-header p {
         font-size: var(--font-base);
     }
 }
@@ -625,19 +730,12 @@ p {
         gap: var(--spacing-sm);
     }
     
-    .cinematic-header.scrolled .header-container {
-        height: 50px;
+    .container {
+        padding: 0 var(--spacing-sm);
     }
     
-    .brand-name {
-        font-size: var(--font-base);
-        display: none;
-    }
-    
-    .brand-logo {
-        width: 25px;
-        height: 25px;
-        font-size: var(--font-sm);
+    .section-padding {
+        padding: var(--spacing-lg) 0;
     }
     
     .mobile-menu-toggle {
@@ -646,9 +744,84 @@ p {
         font-size: var(--font-md);
     }
     
-    main {
-        margin-top: 50px;
-        min-height: calc(100vh - 50px);
+    /* Typography */
+    h1 { font-size: var(--font-2xl); }
+    h2 { font-size: var(--font-xl); }
+    h3 { font-size: var(--font-lg); }
+    
+    /* Buttons */
+    .cta-button {
+        font-size: var(--font-sm);
+        padding: var(--spacing-xs) var(--spacing-md);
+        min-height: 40px;
+    }
+    
+    /* Cards */
+    .cast-card,
+    .success-card,
+    .seating-card,
+    .tip-card,
+    .virtual-card,
+    .season-card,
+    .process-card {
+        padding: var(--spacing-md);
+    }
+    
+    /* Images */
+    .cast-image img,
+    .venue-image img,
+    .training-image img,
+    .community-image img,
+    .offers-image img {
+        height: 200px;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: var(--font-2xl) !important;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-sm);
+    }
+    
+    /* Form elements */
+    .form-control,
+    .form-select {
+        padding: var(--spacing-sm);
+        font-size: var(--font-base);
+    }
+    
+    /* Map */
+    .map-container iframe {
+        height: 250px;
+    }
+    
+    /* Spacing */
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .section-header h2 {
+        font-size: var(--font-xl);
+    }
+    
+    .section-header p {
+        font-size: var(--font-sm);
+    }
+    
+    /* Grid gaps */
+    .features-grid,
+    .highlights-grid,
+    .testimonials-grid,
+    .cast-grid,
+    .success-grid,
+    .seating-grid,
+    .process-grid,
+    .tips-grid,
+    .virtual-grid,
+    .calendar-grid {
+        gap: var(--spacing-sm);
     }
 }
 
@@ -2303,16 +2476,246 @@ p.text-light,
     visibility: visible;
 }
 
-/* Fix mobile menu visibility */
+/* ===== MOBILE OPTIMIZATIONS ===== */
 @media (max-width: 768px) {
-    .mobile-menu-panel.active {
-        visibility: visible;
-        opacity: 1;
+    /* Touch-friendly interactions */
+    .cta-button,
+    .nav-link,
+    .mobile-nav-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
     
-    .mobile-menu-overlay.active {
-        visibility: visible;
-        opacity: 1;
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Better mobile typography */
+    .text-gold,
+    .text-light,
+    .text-gray {
+        line-height: 1.4;
+    }
+    
+    /* Mobile card optimizations */
+    .cast-card,
+    .success-card,
+    .seating-card,
+    .tip-card,
+    .virtual-card,
+    .season-card,
+    .process-card {
+        margin-bottom: var(--spacing-md);
+        border-radius: var(--spacing-sm);
+    }
+    
+    /* Mobile grid fixes */
+    .highlights-grid .highlight-item,
+    .testimonials-grid .testimonial-item,
+    .features-grid .feature-item {
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+    
+    /* Mobile button groups */
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .cta-buttons .cta-button {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Mobile form improvements */
+    .form-control,
+    .form-select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: var(--spacing-sm);
+        border-radius: var(--spacing-xs);
+    }
+    
+    /* Mobile image optimizations */
+    img {
+        border-radius: var(--spacing-xs);
+    }
+    
+    /* Mobile spacing */
+    .section-padding {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    /* Mobile navigation improvements */
+    .mobile-menu-panel {
+        width: 85%;
+        max-width: 350px;
+    }
+    
+    .mobile-nav-link {
+        padding: var(--spacing-md);
+        font-size: var(--font-base);
+    }
+    
+    /* Mobile footer improvements */
+    .footer-section {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .footer-section h4 {
+        font-size: var(--font-lg);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .footer-section ul {
+        font-size: var(--font-sm);
+    }
+    
+    /* Mobile hero improvements */
+    .hero-content {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    /* Mobile table fixes */
+    table {
+        font-size: var(--font-sm);
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* Mobile animations */
+    .fade-in,
+    .fade-in-delay-1,
+    .fade-in-delay-2,
+    .fade-in-delay-3,
+    .fade-in-delay-4 {
+        animation: fadeInMobile 0.6s ease-out;
+    }
+    
+    @keyframes fadeInMobile {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small mobile optimizations */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section-padding {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    /* Smaller text on very small screens */
+    h1 { font-size: var(--font-xl); }
+    h2 { font-size: var(--font-lg); }
+    h3 { font-size: var(--font-base); }
+    
+    /* Compact cards */
+    .cast-card,
+    .success-card,
+    .seating-card,
+    .tip-card,
+    .virtual-card,
+    .season-card,
+    .process-card {
+        padding: var(--spacing-sm);
+    }
+    
+    /* Smaller buttons */
+    .cta-button {
+        font-size: var(--font-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    /* Compact images */
+    .cast-image img,
+    .venue-image img,
+    .training-image img,
+    .community-image img,
+    .offers-image img {
+        height: 180px;
+    }
+    
+    /* Mobile menu adjustments */
+    .mobile-menu-panel {
+        width: 90%;
+    }
+    
+    .mobile-nav-link {
+        padding: var(--spacing-sm);
+        font-size: var(--font-sm);
+    }
+    
+    /* Tighter spacing */
+    .section-header {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Smaller icons */
+    .fas,
+    .fab {
+        font-size: 0.9em;
+    }
+    
+    /* Better touch targets */
+    .social-links a {
+        min-width: 40px;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE FIXES ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .section-padding {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: var(--font-2xl) !important;
+    }
+    
+    .mobile-menu-panel {
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Crisper images on retina displays */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
 
