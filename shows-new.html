@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theater Group Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2c1810 0%, #8b0000 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: white;
+            color: #2c1810;
+        }
+        
+        .shows-section {
+            padding: 60px 0;
+            background: #f5f5dc;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2c1810;
+        }
+        
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .show-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .show-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .show-image {
+            height: 250px;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #2c1810;
+            position: relative;
+        }
+        
+        .show-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .show-card:hover .show-overlay {
+            opacity: 1;
+        }
+        
+        .show-tag {
+            background: #d4af37;
+            color: #2c1810;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .show-content {
+            padding: 25px;
+        }
+        
+        .show-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c1810;
+        }
+        
+        .show-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .show-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .show-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .show-pricing {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b0000;
+            margin-bottom: 20px;
+        }
+        
+        .show-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #d4af37;
+            color: #2c1810;
+        }
+        
+        .btn-primary:hover {
+            background: #b8941f;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2c1810;
+            color: #2c1810;
+        }
+        
+        .btn-outline:hover {
+            background: #2c1810;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .shows-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .show-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Upcoming Productions</h1>
+            <p>Discover our spectacular lineup of performances for the 2024 season</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active">All Shows</button>
+                <button class="filter-btn">Drama</button>
+                <button class="filter-btn">Musical</button>
+                <button class="filter-btn">Comedy</button>
+                <button class="filter-btn">Experimental</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Shows Section -->
+    <section class="shows-section">
+        <div class="container">
+            <h2 class="section-title">Now Playing</h2>
+            <div class="shows-grid">
+                <div class="show-card">
+                    <div class="show-image">
+                        🎭
+                        <div class="show-overlay">
+                            <span class="show-tag">Drama</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Hamlet</h3>
+                        <p>Shakespeare's masterpiece of revenge, madness, and moral corruption comes to life in a stunning contemporary production.</p>
+                        <div class="show-meta">
+                            <span>📅 Mar 15 - Apr 2, 2024</span>
+                            <span>🕐 7:30 PM</span>
+                            <span>📍 Main Theater</span>
+                        </div>
+                        <div class="show-pricing">$45 - $85</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Tickets</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image">
+                        🎪
+                        <div class="show-overlay">
+                            <span class="show-tag">Musical</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Chicago</h3>
+                        <p>The electrifying tale of murder, greed, corruption, violence, exploitation, adultery, and treachery.</p>
+                        <div class="show-meta">
+                            <span>📅 Mar 20 - Apr 15, 2024</span>
+                            <span>🕐 8:00 PM</span>
+                            <span>📍 Main Theater</span>
+                        </div>
+                        <div class="show-pricing">$55 - $95</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Tickets</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image">
+                        😄
+                        <div class="show-overlay">
+                            <span class="show-tag">Comedy</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>The Importance of Being Earnest</h3>
+                        <p>Oscar Wilde's brilliant comedy of manners satirizes Victorian social hypocrisy with wit and charm.</p>
+                        <div class="show-meta">
+                            <span>📅 Mar 25 - Apr 10, 2024</span>
+                            <span>🕐 7:00 PM</span>
+                            <span>📍 Studio Theater</span>
+                        </div>
+                        <div class="show-pricing">$35 - $65</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Tickets</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image">
+                        ⚔️
+                        <div class="show-overlay">
+                            <span class="show-tag">Drama</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Macbeth</h3>
+                        <p>Shakespeare's tragic tale of ambition, guilt, and supernatural forces in a dark and atmospheric production.</p>
+                        <div class="show-meta">
+                            <span>📅 Mar 28 - Apr 20, 2024</span>
+                            <span>🕐 8:00 PM</span>
+                            <span>📍 Main Theater</span>
+                        </div>
+                        <div class="show-pricing">$50 - $90</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Tickets</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image">
+                        🎵
+                        <div class="show-overlay">
+                            <span class="show-tag">Musical</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Les Misérables</h3>
+                        <p>The epic musical story of broken dreams, love, and redemption set against revolutionary France.</p>
+                        <div class="show-meta">
+                            <span>📅 Apr 5 - May 5, 2024</span>
+                            <span>🕐 7:30 PM</span>
+                            <span>📍 Main Theater</span>
+                        </div>
+                        <div class="show-pricing">$60 - $120</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Tickets</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Shows Section -->
+    <section class="shows-section" style="background: #e8dcc0;">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <div class="shows-grid">
+                <div class="show-card">
+                    <div class="show-image">
+                        🌟
+                        <div class="show-overlay">
+                            <span class="show-tag">Experimental</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>A Dream Play</h3>
+                        <p>Strindberg's surreal journey through the subconscious mind, where reality and dreams merge.</p>
+                        <div class="show-meta">
+                            <span>📅 May 12 - May 20, 2024</span>
+                            <span>🕐 7:00 PM</span>
+                            <span>📍 Black Box Theater</span>
+                        </div>
+                        <div class="show-pricing">$40 - $70</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Pre-Book</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image">
+                        🎭
+                        <div class="show-overlay">
+                            <span class="show-tag">Drama</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Othello</h3>
+                        <p>Shakespeare's timeless tragedy of jealousy, betrayal, and revenge in a modern interpretation.</p>
+                        <div class="show-meta">
+                            <span>📅 Jun 10 - Jun 25, 2024</span>
+                            <span>🕐 8:00 PM</span>
+                            <span>📍 Main Theater</span>
+                        </div>
+                        <div class="show-pricing">$45 - $85</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Pre-Book</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image">
+                        🎼
+                        <div class="show-overlay">
+                            <span class="show-tag">Musical</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>The Phantom of the Opera</h3>
+                        <p>Andrew Lloyd Webber's masterpiece returns in a spectacular new production.</p>
+                        <div class="show-meta">
+                            <span>📅 Jul 15 - Aug 10, 2024</span>
+                            <span>🕐 7:30 PM</span>
+                            <span>📍 Main Theater</span>
+                        </div>
+                        <div class="show-pricing">$75 - $150</div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Pre-Book</a>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

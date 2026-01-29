@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditions - Royal Theater Group</title>
+    <meta name="description" content="Join our theater company! Royal Theater Group is seeking talented performers for upcoming productions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="auditions-page">
+    <!-- ===== PREMIUM CINEMATIC HEADER ===== -->
+    <header class="cinematic-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Left Zone - Brand Identity -->
+            <a href="index.html" class="brand-identity">
+                <div class="brand-logo">
+                    <i class="fas fa-theater-masks"></i>
+                </div>
+                <span class="brand-name">Royal Theater Group</span>
+            </a>
+            
+            <!-- Center Zone - Main Navigation -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="home2.html" class="nav-link">Home 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shows.html" class="nav-link">Shows</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="auditions.html" class="nav-link">Auditions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tickets.html" class="nav-link">Tickets</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Right Zone - Action Buttons -->
+            <div class="action-buttons">
+                <a href="login.html" class="cta-button login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </a>
+                <a href="register.html" class="cta-button register">
+                    <i class="fas fa-user-plus"></i>
+                    Register
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ===== MOBILE MENU PANEL ===== -->
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="mobile-menu-header">
+            <div class="brand-identity">
+                <div class="brand-logo">
+                    <i class="fas fa-theater-masks"></i>
+                </div>
+                <span class="brand-name">Royal Theater</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuClose" aria-label="Close mobile menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+        
+        <nav class="mobile-menu-nav">
+            <div class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="shows.html" class="mobile-nav-link">Shows</a>
+            </div>
+            <div class="mobile-nav-item active">
+                <a href="auditions.html" class="mobile-nav-link">Auditions</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="tickets.html" class="mobile-nav-link">Tickets</a>
+            </div>
+           
+            <div class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            </div>
+        </nav>
+        
+        <div class="mobile-menu-actions">
+            <a href="login.html" class="cta-button login">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+            </a>
+            <a href="register.html" class="cta-button register">
+                <i class="fas fa-user-plus"></i>
+                Register
+            </a>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- ===== MAIN CONTENT ===== -->
+    <main style="margin-top: 60px;">
+        <!-- Hero Section -->
+        <section class="hero-section" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/images/auditions/current1.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+            <!-- Animated Background Elements -->
+            <div class="hero-animation">
+                <div class="floating-element theater-mask" style="top: 10%; left: 10%; animation-delay: 0s;">🎭</div>
+                <div class="floating-element music-note" style="top: 20%; right: 15%; animation-delay: 1s;">🎵</div>
+                <div class="floating-element star" style="top: 15%; left: 80%; animation-delay: 2s;">⭐</div>
+                <div class="floating-element theater-mask" style="top: 70%; left: 5%; animation-delay: 3s;">🎭</div>
+                <div class="floating-element music-note" style="top: 80%; right: 10%; animation-delay: 4s;">🎵</div>
+                <div class="floating-element star" style="top: 60%; left: 90%; animation-delay: 5s;">⭐</div>
+                <div class="floating-element spotlight" style="top: 30%; left: 50%; animation-delay: 6s;">💡</div>
+                <div class="floating-element curtain" style="top: 50%; right: 5%; animation-delay: 7s;">🎪</div>
+                <div class="floating-element ticket" style="top: 25%; left: 25%; animation-delay: 8s;">🎫</div>
+                <div class="floating-element spotlight" style="top: 75%; left: 75%; animation-delay: 9s;">💡</div>
+            </div>
+            
+            <!-- Animated Gradient Overlay -->
+            <div class="hero-gradient-overlay"></div>
+            
+            <!-- Light Beams Animation -->
+            <div class="light-beams">
+                <div class="beam beam-1"></div>
+                <div class="beam beam-2"></div>
+                <div class="beam beam-3"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1 class="text-light" style="font-size: 4rem; margin-bottom: 1.5rem; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                        Join Our Cast
+                    </h1>
+                    <p class="text-light" style="font-size: 1.6rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        Showcase your talent and become part of our theatrical family
+                    </p>
+                    <div class="hero-cta fade-in-delay-1">
+                        <a href="#current-auditions" class="cta-button register" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+                            <i class="fas fa-microphone"></i>
+                            View Auditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Current Auditions Section -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Current Auditions</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        We're currently casting for these exciting productions
+                    </p>
+                </div>
+                
+                <div class="auditions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="audition-timeline-item" style="background: #2a2a2a; border-radius: 15px; overflow: hidden;">
+                        <img src="assets/images/auditions/current1.jpg" alt="Current Audition" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="audition-content" style="padding: 2rem;">
+                            <div class="audition-status" style="background: #4CAF50; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">
+                                NOW CASTING
+                            </div>
+                            <h3 class="text-gold" style="font-size: 1.8rem; margin-bottom: 1rem;">The Phantom Returns</h3>
+                            <p class="text-light" style="margin-bottom: 1.5rem;">
+                                Seeking lead and supporting actors for our revival of this timeless classic.
+                            </p>
+                            <div class="audition-details" style="margin-bottom: 1.5rem;">
+                                <p class="text-light important-date" style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--accent-gold);">
+                                    <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                    Audition Date: March 15, 2024
+                                </p>
+                                <p class="text-light" style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                    <i class="fas fa-clock" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                    10:00 AM - 6:00 PM
+                                </p>
+                                <p class="text-light" style="font-size: 0.9rem;">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                    Rehearsal Hall A
+                                </p>
+                            </div>
+                            <a href="#audition-form" class="cta-button register">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="audition-timeline-item" style="background: #2a2a2a; border-radius: 15px; overflow: hidden;">
+                        <img src="assets/images/auditions/current2.jpg" alt="Current Audition" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="audition-content" style="padding: 2rem;">
+                            <div class="audition-status" style="background: #4CAF50; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">
+                                NOW CASTING
+                            </div>
+                            <h3 class="text-gold" style="font-size: 1.8rem; margin-bottom: 1rem;">Shakespeare in the Park</h3>
+                            <p class="text-light" style="margin-bottom: 1.5rem;">
+                                Looking for versatile actors for multiple roles in our outdoor production.
+                            </p>
+                            <div class="audition-details" style="margin-bottom: 1.5rem;">
+                                <p class="text-light important-date" style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--accent-gold);">
+                                    <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                    Audition Date: March 22, 2024
+                                </p>
+                                <p class="text-light" style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                    <i class="fas fa-clock" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                    2:00 PM - 8:00 PM
+                                </p>
+                                <p class="text-light" style="font-size: 0.9rem;">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                    Outdoor Amphitheater
+                                </p>
+                            </div>
+                            <a href="#audition-form" class="cta-button register">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step Progress Section -->
+                <div class="step-progress" style="margin-top: 4rem;">
+                    <div class="step-item">
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary-dark); font-weight: bold; font-size: 1.5rem;">1</div>
+                            <h4 class="text-gold" style="margin-bottom: 0.5rem;">Submit Application</h4>
+                            <p class="text-light" style="font-size: 0.9rem;">Fill out the audition form</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary-dark); font-weight: bold; font-size: 1.5rem;">2</div>
+                            <h4 class="text-gold" style="margin-bottom: 0.5rem;">Audition</h4>
+                            <p class="text-light" style="font-size: 0.9rem;">Showcase your talent</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary-dark); font-weight: bold; font-size: 1.5rem;">3</div>
+                            <h4 class="text-gold" style="margin-bottom: 0.5rem;">Callback</h4>
+                            <p class="text-light" style="font-size: 0.9rem;">Second round evaluation</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary-dark); font-weight: bold; font-size: 1.5rem;">4</div>
+                            <h4 class="text-gold" style="margin-bottom: 0.5rem;">Casting</h4>
+                            <p class="text-light" style="font-size: 0.9rem;">Join our company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How to Audition Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">How to Audition</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Follow these steps to prepare for your audition with us
+                    </p>
+                </div>
+                
+                <div class="steps-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="step-item text-center fade-in-delay-1">
+                        <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-gold); color: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1rem;">
+                            1
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Prepare Your Material</h3>
+                        <p class="text-light">Choose appropriate monologues and songs that showcase your range</p>
+                    </div>
+                    
+                    <div class="step-item text-center fade-in-delay-2">
+                        <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-gold); color: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1rem;">
+                            2
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Submit Application</h3>
+                        <p class="text-light">Fill out our online audition form with your details and experience</p>
+                    </div>
+                    
+                    <div class="step-item text-center fade-in-delay-3">
+                        <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-gold); color: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1rem;">
+                            3
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Attend Audition</h3>
+                        <p class="text-light">Arrive 15 minutes early and bring your prepared materials</p>
+                    </div>
+                    
+                    <div class="step-item text-center fade-in-delay-4">
+                        <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-gold); color: var(--primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1rem;">
+                            4
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Follow Up</h3>
+                        <p class="text-light">Wait for our response within 7-10 business days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Simple Application Form -->
+        <section class="section-padding" style="background: #1a1a1a;" id="audition-form">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Apply Now</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Fill out the form below to apply for our current auditions
+                    </p>
+                </div>
+                
+                <div class="audition-form-container" style="max-width: 600px; margin: 3rem auto; background: #2a2a2a; padding: 3rem; border-radius: 20px;">
+                    <form class="audition-form fade-in-delay-1">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">Full Name *</label>
+                            <input type="text" name="fullName" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 8px; background: #1a1a1a; color: white; font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 8px; background: #1a1a1a; color: white; font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">Phone Number *</label>
+                            <input type="tel" name="phone" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 8px; background: #1a1a1a; color: white; font-size: 1rem;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">Experience Level *</label>
+                            <select name="experience" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 8px; background: #1a1a1a; color: white; font-size: 1rem;">
+                                <option value="">Select Experience Level</option>
+                                <option value="beginner">Beginner (0-2 years)</option>
+                                <option value="intermediate">Intermediate (2-5 years)</option>
+                                <option value="advanced">Advanced (5+ years)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label style="display: flex; align-items: center; color: white; cursor: pointer;">
+                                <input type="checkbox" name="terms" required style="margin-right: 0.5rem;">
+                                <span style="font-size: 0.9rem;">I agree to the terms and conditions</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="cta-button register" style="width: 100%; font-size: 1.1rem; padding: 1rem 2rem;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Success Stories Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Success Stories</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Meet artists who started their journey with us
+                    </p>
+                </div>
+                
+                <div class="success-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="success-card fade-in-delay-1" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <div class="success-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Broadway Debut</h3>
+                        <p class="text-light" style="margin-bottom: 1rem;">Jennifer Martinez started in our chorus and now leads Broadway productions</p>
+                        <div class="success-year" style="color: var(--accent-gold); font-weight: 600;">Class of 2018</div>
+                    </div>
+                    
+                    <div class="success-card fade-in-delay-2" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <div class="success-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Award Winner</h3>
+                        <p class="text-light" style="margin-bottom: 1rem;">Robert Kim won National Theater Award after 3 years with our troupe</p>
+                        <div class="success-year" style="color: var(--accent-gold); font-weight: 600;">Class of 2020</div>
+                    </div>
+                    
+                    <div class="success-card fade-in-delay-3" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <div class="success-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Film Career</h3>
+                        <p class="text-light" style="margin-bottom: 1rem;">Amanda Chen transitioned to films after building skills here</p>
+                        <div class="success-year" style="color: var(--accent-gold); font-weight: 600;">Class of 2019</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Training Programs Section -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="training-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="training-text fade-in">
+                        <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1.5rem;">Training Programs</h2>
+                        <p class="text-light" style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+                            We offer comprehensive training programs to help you develop your skills and build confidence.
+                        </p>
+                        <div class="training-programs" style="margin-bottom: 2rem;">
+                            <div class="program-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-graduation-cap" style="color: var(--accent-gold); margin-right: 1rem;"></i>
+                                <span class="text-light">Acting workshops for all levels</span>
+                            </div>
+                            <div class="program-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-microphone" style="color: var(--accent-gold); margin-right: 1rem;"></i>
+                                <span class="text-light">Voice and diction training</span>
+                            </div>
+                            <div class="program-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-running" style="color: var(--accent-gold); margin-right: 1rem;"></i>
+                                <span class="text-light">Movement and dance classes</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="cta-button register" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="training-image fade-in-delay-1">
+                        <img src="assets/images/auditions/training.jpg" alt="Training Programs" style="width: 100%; height: 450px; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Audition Tips Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Audition Tips</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Expert advice to help you shine during your audition
+                    </p>
+                </div>
+                
+                <div class="tips-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="tip-card fade-in-delay-1" style="background: #2a2a2a; padding: 2rem; border-radius: 15px;">
+                        <div class="tip-number" style="font-size: 2rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 1rem;">01</div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Prepare Your Material</h3>
+                        <p class="text-light">Choose pieces that showcase your strengths and match the role you're auditioning for.</p>
+                    </div>
+                    
+                    <div class="tip-card fade-in-delay-2" style="background: #2a2a2a; padding: 2rem; border-radius: 15px;">
+                        <div class="tip-number" style="font-size: 2rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 1rem;">02</div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Arrive Early</h3>
+                        <p class="text-light">Give yourself time to warm up, fill out paperwork, and get comfortable with the space.</p>
+                    </div>
+                    
+                    <div class="tip-card fade-in-delay-3" style="background: #2a2a2a; padding: 2rem; border-radius: 15px;">
+                        <div class="tip-number" style="font-size: 2rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 1rem;">03</div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Be Professional</h3>
+                        <p class="text-light">Dress appropriately, be respectful to everyone, and show enthusiasm for the opportunity.</p>
+                    </div>
+                    
+                    <div class="tip-card fade-in-delay-4" style="background: #2a2a2a; padding: 2rem; border-radius: 15px;">
+                        <div class="tip-number" style="font-size: 2rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 1rem;">04</div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Stay Confident</h3>
+                        <p class="text-light">Trust your preparation, take deep breaths, and remember that they want you to succeed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="cinematic-footer" style="background: #0a0a0a; border-top: 1px solid var(--border-light); padding: 3rem 0 1rem;">
+        <div class="container">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="brand-identity">
+                        <div class="brand-logo">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <span class="brand-name">Royal Theater Group</span>
+                    </div>
+                    <p class="text-light" style="margin-top: 1rem; font-size: 0.9rem;">
+                        Experience the magic of live theater with world-class productions.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4 class="text-gold" style="margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="index.html" class="text-light" style="text-decoration: none;">Home</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="shows.html" class="text-light" style="text-decoration: none;">Shows & Events</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="tickets.html" class="text-light" style="text-decoration: none;">Book Tickets</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="dashboard.html" class="text-light" style="text-decoration: none;">Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4 class="text-gold" style="margin-bottom: 1rem;">Contact Us</h4>
+                    <p class="text-light" style="margin-bottom: 0.5rem;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                        123 Theater District, Arts City, AC 12345
+                    </p>
+                    <p class="text-light" style="margin-bottom: 0.5rem;">
+                        <i class="fas fa-phone" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                        (555) 123-4567
+                    </p>
+                    <p class="text-light">
+                        <i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                        info@royaltheater.com
+                    </p>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="footer-social">
+                    <h4 class="text-gold" style="margin-bottom: 1rem;">Follow Us</h4>
+                    <div class="social-links" style="display: flex; gap: 1rem;">
+                        <a href="#" class="text-light" style="font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light" style="font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light" style="font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light" style="font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom" style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+                <p class="text-gray" style="font-size: 0.9rem;">
+                    &copy; 2024 Royal Theater Group. All rights reserved. | 
+                    <a href="privacy-policy.html" class="text-gold" style="text-decoration: none;">Privacy Policy</a> | 
+                    <a href="terms-conditions.html" class="text-gold" style="text-decoration: none;">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenuPanel.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuClose.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuToggle.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Header Scroll Effect
+        const header = document.getElementById('mainHeader');
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Add JS class to enable animations
+        document.documentElement.classList.add('js');
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3, .fade-in-delay-4').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

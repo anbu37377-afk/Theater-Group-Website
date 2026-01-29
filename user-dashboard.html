@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Royal Theater Group</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Theater Group Website</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="shows.html">Shows</a></li>
+                    <li><a href="auditions.html">Auditions</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">John Doe</span>
+                    <div class="user-dropdown">
+                        <a href="user-dashboard.html" class="active">Dashboard</a>
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Hero -->
+    <section class="dashboard-hero">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <h1>Welcome back, John!</h1>
+                <p>Manage your bookings, view upcoming shows, and access exclusive member benefits</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-layout">
+                <!-- Sidebar Navigation -->
+                <div class="dashboard-sidebar">
+                    <nav class="sidebar-nav">
+                        <ul>
+                            <li><a href="#overview" class="nav-link active"><i class="fas fa-home"></i> Overview</a></li>
+                            <li><a href="#bookings" class="nav-link"><i class="fas fa-ticket-alt"></i> My Bookings</a></li>
+                            <li><a href="#auditions" class="nav-link"><i class="fas fa-theater-masks"></i> My Auditions</a></li>
+                            <li><a href="#profile" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a href="#settings" class="nav-link"><i class="fas fa-cog"></i> Settings</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Main Content -->
+                <div class="dashboard-main">
+                    <!-- Overview Section -->
+                    <div class="dashboard-section active" id="overview">
+                        <h2>Dashboard Overview</h2>
+                        
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Active Bookings</h3>
+                                    <span class="stat-number">3</span>
+                                    <p>Upcoming shows</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Shows Attended</h3>
+                                    <span class="stat-number">12</span>
+                                    <p>This season</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Member Points</h3>
+                                    <span class="stat-number">450</span>
+                                    <p>Redeem rewards</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-theater-masks"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Auditions</h3>
+                                    <span class="stat-number">2</span>
+                                    <p>Applications submitted</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="recent-activity">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-ticket-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Booking Confirmed</h4>
+                                        <p>2 tickets for Chicago - March 25, 2024</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-theater-masks"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Audition Application Submitted</h4>
+                                        <p>Romeo & Juliet - Lead Role</p>
+                                        <span class="activity-time">3 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Points Earned</h4>
+                                        <p>50 points for attending Hamlet</p>
+                                        <span class="activity-time">1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Shows -->
+                        <div class="upcoming-shows-preview">
+                            <h3>Your Upcoming Shows</h3>
+                            <div class="upcoming-shows-list">
+                                <div class="upcoming-show-item">
+                                    <div class="show-image" style="background-image: url('assets/images/shows/chicago.jpg');">
+                                        <!-- Replace this image path with your own image if not visible -->
+                                    </div>
+                                    <div class="show-details">
+                                        <h4>Chicago</h4>
+                                        <p><i class="far fa-calendar"></i> March 25, 2024</p>
+                                        <p><i class="far fa-clock"></i> 8:00 PM</p>
+                                        <p><i class="fas fa-ticket-alt"></i> 2 tickets - Premium Seats</p>
+                                    </div>
+                                    <div class="show-actions">
+                                        <a href="#" class="btn btn-outline">View Tickets</a>
+                                    </div>
+                                </div>
+                                <div class="upcoming-show-item">
+                                    <div class="show-image" style="background-image: url('assets/images/shows/hamlet.jpg');">
+                                        <!-- Replace this image path with your own image if not visible -->
+                                    </div>
+                                    <div class="show-details">
+                                        <h4>Hamlet</h4>
+                                        <p><i class="far fa-calendar"></i> April 2, 2024</p>
+                                        <p><i class="far fa-clock"></i> 7:30 PM</p>
+                                        <p><i class="fas fa-ticket-alt"></i> 1 ticket - Standard Seat</p>
+                                    </div>
+                                    <div class="show-actions">
+                                        <a href="#" class="btn btn-outline">View Tickets</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bookings Section -->
+                    <div class="dashboard-section" id="bookings">
+                        <h2>My Bookings</h2>
+                        
+                        <div class="booking-filters">
+                            <button class="filter-btn active" data-filter="all">All Bookings</button>
+                            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                            <button class="filter-btn" data-filter="past">Past</button>
+                            <button class="filter-btn" data-filter="cancelled">Cancelled</button>
+                        </div>
+
+                        <div class="bookings-list">
+                            <div class="booking-card upcoming">
+                                <div class="booking-header">
+                                    <div class="booking-info">
+                                        <h3>Chicago</h3>
+                                        <span class="booking-status upcoming">Upcoming</span>
+                                    </div>
+                                    <div class="booking-date">
+                                        <i class="far fa-calendar"></i>
+                                        March 25, 2024 - 8:00 PM
+                                    </div>
+                                </div>
+                                <div class="booking-details">
+                                    <div class="booking-seats">
+                                        <p><strong>Seats:</strong> A12, A13 (Premium)</p>
+                                        <p><strong>Theater:</strong> Main Theater</p>
+                                        <p><strong>Total Paid:</strong> $150.00</p>
+                                    </div>
+                                    <div class="booking-actions">
+                                        <button class="btn btn-outline">View Tickets</button>
+                                        <button class="btn btn-secondary">Download PDF</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="booking-card upcoming">
+                                <div class="booking-header">
+                                    <div class="booking-info">
+                                        <h3>Hamlet</h3>
+                                        <span class="booking-status upcoming">Upcoming</span>
+                                    </div>
+                                    <div class="booking-date">
+                                        <i class="far fa-calendar"></i>
+                                        April 2, 2024 - 7:30 PM
+                                    </div>
+                                </div>
+                                <div class="booking-details">
+                                    <div class="booking-seats">
+                                        <p><strong>Seat:</strong> C8 (Standard)</p>
+                                        <p><strong>Theater:</strong> Main Theater</p>
+                                        <p><strong>Total Paid:</strong> $45.00</p>
+                                    </div>
+                                    <div class="booking-actions">
+                                        <button class="btn btn-outline">View Tickets</button>
+                                        <button class="btn btn-secondary">Download PDF</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="booking-card past">
+                                <div class="booking-header">
+                                    <div class="booking-info">
+                                        <h3>The Importance of Being Earnest</h3>
+                                        <span class="booking-status past">Completed</span>
+                                    </div>
+                                    <div class="booking-date">
+                                        <i class="far fa-calendar"></i>
+                                        February 15, 2024 - 7:00 PM
+                                    </div>
+                                </div>
+                                <div class="booking-details">
+                                    <div class="booking-seats">
+                                        <p><strong>Seats:</strong> B5, B6 (Premium)</p>
+                                        <p><strong>Theater:</strong> Studio Theater</p>
+                                        <p><strong>Total Paid:</strong> $130.00</p>
+                                    </div>
+                                    <div class="booking-actions">
+                                        <button class="btn btn-outline">Rate Show</button>
+                                        <button class="btn btn-secondary">Book Again</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Auditions Section -->
+                    <div class="dashboard-section" id="auditions">
+                        <h2>My Auditions</h2>
+                        
+                        <div class="auditions-list">
+                            <div class="audition-status-card">
+                                <div class="audition-header">
+                                    <h3>Romeo & Juliet</h3>
+                                    <span class="status-badge pending">Under Review</span>
+                                </div>
+                                <div class="audition-details">
+                                    <p><strong>Role Applied:</strong> Romeo (Lead)</p>
+                                    <p><strong>Submission Date:</strong> March 10, 2024</p>
+                                    <p><strong>Audition Date:</strong> March 20, 2024</p>
+                                    <p><strong>Status:</strong> Your application is being reviewed by the casting director</p>
+                                </div>
+                                <div class="audition-actions">
+                                    <button class="btn btn-outline">View Application</button>
+                                    <button class="btn btn-secondary">Withdraw Application</button>
+                                </div>
+                            </div>
+
+                            <div class="audition-status-card">
+                                <div class="audition-header">
+                                    <h3>The Glass Menagerie</h3>
+                                    <span class="status-badge rejected">Not Selected</span>
+                                </div>
+                                <div class="audition-details">
+                                    <p><strong>Role Applied:</strong> Tom Wingfield</p>
+                                    <p><strong>Submission Date:</strong> February 28, 2024</p>
+                                    <p><strong>Audition Date:</strong> March 5, 2024</p>
+                                    <p><strong>Status:</strong> Thank you for your interest. The role has been cast.</p>
+                                </div>
+                                <div class="audition-actions">
+                                    <button class="btn btn-outline">View Feedback</button>
+                                    <button class="btn btn-primary">Apply for Other Shows</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="apply-more-section">
+                            <h3>Looking for More Opportunities?</h3>
+                            <p>Check out our current audition calls and submit your application today!</p>
+                            <a href="auditions.html" class="btn btn-primary">View Open Auditions</a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <div class="dashboard-section" id="profile">
+                        <h2>My Profile</h2>
+                        
+                        <div class="profile-container">
+                            <div class="profile-form">
+                                <div class="form-group">
+                                    <label for="profile-name">Full Name</label>
+                                    <input type="text" id="profile-name" value="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-email">Email</label>
+                                    <input type="email" id="profile-email" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-phone">Phone</label>
+                                    <input type="tel" id="profile-phone" value="(555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-bio">Bio</label>
+                                    <textarea id="profile-bio" rows="4" placeholder="Tell us about yourself and your theater interests...">Passionate theater enthusiast with a love for both classical and contemporary performances. Regular attendee and aspiring actor.</textarea>
+                                </div>
+                                <button class="btn btn-primary">Update Profile</button>
+                            </div>
+
+                            <div class="profile-stats">
+                                <h3>Member Statistics</h3>
+                                <div class="stat-item">
+                                    <span class="stat-label">Member Since:</span>
+                                    <span class="stat-value">January 2023</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Shows Attended:</span>
+                                    <span class="stat-value">24</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Spent:</span>
+                                    <span class="stat-value">$1,245</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Member Tier:</span>
+                                    <span class="stat-value premium">Premium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="dashboard-section" id="settings">
+                        <h2>Settings</h2>
+                        
+                        <div class="settings-container">
+                            <div class="setting-group">
+                                <h3>Notification Preferences</h3>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>Email notifications for upcoming shows</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>SMS reminders for bookings</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        <span>Newsletter and promotional emails</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>Audition announcements</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-group">
+                                <h3>Privacy Settings</h3>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        <span>Make profile visible to other members</span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>Show attendance history publicly</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-group">
+                                <h3>Account Security</h3>
+                                <div class="setting-item">
+                                    <button class="btn btn-outline">Change Password</button>
+                                </div>
+                                <div class="setting-item">
+                                    <button class="btn btn-outline">Enable Two-Factor Authentication</button>
+                                </div>
+                                <div class="setting-item">
+                                    <button class="btn btn-outline">Download My Data</button>
+                                </div>
+                            </div>
+
+                            <div class="setting-group danger">
+                                <h3>Danger Zone</h3>
+                                <div class="setting-item">
+                                    <button class="btn btn-danger">Delete Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-theater-masks"></i>
+                        <h3>Theater Group Website</h3>
+                    </div>
+                    <p>Experience the magic of live theater with our world-class productions, talented artists, and unforgettable performances.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shows.html">Shows & Events</a></li>
+                        <li><a href="auditions.html">Auditions</a></li>
+                        <li><a href="tickets.html">Book Tickets</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Upcoming Shows</h4>
+                    <ul>
+                        <li><a href="shows.html">Hamlet - Mar 15</a></li>
+                        <li><a href="shows.html">Chicago - Apr 10</a></li>
+                        <li><a href="shows.html">A Dream Play - May 12</a></li>
+                        <li><a href="shows.html">View All Shows</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Theater Group Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

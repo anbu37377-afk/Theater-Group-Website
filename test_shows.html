@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows Test - Royal Theater Group</title>
+    <style>
+        body {
+            background: red !important;
+            color: white !important;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test {
+            background: blue;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="test">
+        <h1>CSS Test Page</h1>
+        <p>If you see this with blue background, the HTML is working.</p>
+        <p>If the background is red, inline styles are working but external CSS is not.</p>
+        <p>If you see no styling at all, there's a bigger issue.</p>
+    </div>
+    
+    <!-- Testing the actual content -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Theater Group Website</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shows.html" class="active">Shows</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="shows-hero">
+        <div class="container">
+            <div class="shows-hero-content">
+                <h1 class="shows-hero-title">Our Spectacular Shows</h1>
+                <p class="shows-hero-subtitle">Discover world-class performances</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

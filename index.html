@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Royal Theater Group</title>
+    <meta name="description" content="Experience the magic of live theater at Royal Theater Group. Premium performances, world-class productions, and unforgettable entertainment.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ===== PREMIUM CINEMATIC HEADER ===== -->
+    <header class="cinematic-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Left Zone - Brand Identity -->
+            <a href="index.html" class="brand-identity">
+                <div class="brand-logo">
+                    <i class="fas fa-theater-masks"></i>
+                </div>
+                <span class="brand-name">Royal Theater Group</span>
+            </a>
+            
+            <!-- Center Zone - Main Navigation -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="home2.html" class="nav-link">Home 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shows.html" class="nav-link">Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="auditions.html" class="nav-link">Auditions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tickets.html" class="nav-link">Tickets</a>
+                    </li>
+<li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Right Zone - Action Buttons -->
+            <div class="action-buttons">
+                <a href="login.html" class="cta-button login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </a>
+                <a href="register.html" class="cta-button register">
+                    <i class="fas fa-user-plus"></i>
+                    Register
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ===== MOBILE MENU PANEL ===== -->
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="mobile-menu-header">
+            <div class="brand-identity">
+                <div class="brand-logo">
+                    <i class="fas fa-theater-masks"></i>
+                </div>
+                <span class="brand-name">Royal Theater</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuClose" aria-label="Close mobile menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+        
+        <nav class="mobile-menu-nav">
+            <div class="mobile-nav-item active">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="home2.html" class="mobile-nav-link">Home 2</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="shows.html" class="mobile-nav-link">Shows</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="auditions.html" class="mobile-nav-link">Auditions</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="tickets.html" class="mobile-nav-link">Tickets</a>
+            </div>
+<div class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+            </div>
+        </nav>
+        
+        <div class="mobile-menu-actions">
+            <a href="login.html" class="cta-button login">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+            </a>
+            <a href="register.html" class="cta-button register">
+                <i class="fas fa-user-plus"></i>
+                Register
+            </a>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- ===== MAIN CONTENT ===== -->
+    <main style="margin-top: 60px;">
+        <!-- Hero Section -->
+        <section class="hero-section" style="height: 100vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/images/home/home1-hero.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+            <!-- Animated Background Elements -->
+            <div class="hero-animation">
+                <div class="floating-element theater-mask" style="top: 10%; left: 10%; animation-delay: 0s;">🎭</div>
+                <div class="floating-element music-note" style="top: 20%; right: 15%; animation-delay: 1s;">🎵</div>
+                <div class="floating-element star" style="top: 15%; left: 80%; animation-delay: 2s;">⭐</div>
+                <div class="floating-element theater-mask" style="top: 70%; left: 5%; animation-delay: 3s;">🎭</div>
+                <div class="floating-element music-note" style="top: 80%; right: 10%; animation-delay: 4s;">🎵</div>
+                <div class="floating-element star" style="top: 60%; left: 90%; animation-delay: 5s;">⭐</div>
+                <div class="floating-element spotlight" style="top: 30%; left: 50%; animation-delay: 6s;">💡</div>
+                <div class="floating-element curtain" style="top: 50%; right: 5%; animation-delay: 7s;">🎪</div>
+                <div class="floating-element ticket" style="top: 25%; left: 25%; animation-delay: 8s;">🎫</div>
+                <div class="floating-element spotlight" style="top: 75%; left: 75%; animation-delay: 9s;">💡</div>
+            </div>
+            
+            <!-- Animated Gradient Overlay -->
+            <div class="hero-gradient-overlay"></div>
+            
+            <!-- Light Beams Animation -->
+            <div class="light-beams">
+                <div class="beam beam-1"></div>
+                <div class="beam beam-2"></div>
+                <div class="beam beam-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1 class="text-light" style="font-size: 4rem; margin-bottom: 1.5rem; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                        Experience Live Theater Like Never Before
+                    </h1>
+                    <p class="text-light" style="font-size: 1.5rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Step into a world of captivating performances, world-class productions, and unforgettable entertainment at Royal Theater Group.
+                    </p>
+                    <div class="hero-cta fade-in-delay-1">
+                        <a href="shows.html" class="cta-button register" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                            <i class="fas fa-ticket-alt"></i>
+                            Book Your Experience
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Upcoming Shows Section -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Upcoming Shows</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Discover our spectacular lineup of performances that will transport you to different worlds
+                    </p>
+                </div>
+                
+                <div class="shows-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="show-card fade-in-delay-1" style="background: #2a2a2a; border-radius: 15px; overflow: hidden; transition: transform 0.3s ease;">
+                        <img src="assets/images/home/shows.jpg" alt="Featured Show" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="show-content" style="padding: 1.5rem;">
+                            <h3 class="text-gold" style="margin-bottom: 0.5rem;">The Phantom Returns</h3>
+                            <p class="text-light" style="margin-bottom: 1rem;">A spectacular revival of the timeless classic</p>
+                            <a href="tickets.html" class="cta-button login">Get Tickets</a>
+                        </div>
+                    </div>
+                    
+                    <div class="show-card fade-in-delay-2" style="background: #2a2a2a; border-radius: 15px; overflow: hidden; transition: transform 0.3s ease;">
+                        <img src="assets/images/home/shows2.jpg" alt="Featured Show" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="show-content" style="padding: 1.5rem;">
+                            <h3 class="text-gold" style="margin-bottom: 0.5rem;">Shakespeare in the Park</h3>
+                            <p class="text-light" style="margin-bottom: 1rem;">Open-air performances under the stars</p>
+                            <a href="tickets.html" class="cta-button login">Get Tickets</a>
+                        </div>
+                    </div>
+                    
+                    <div class="show-card fade-in-delay-3" style="background: #2a2a2a; border-radius: 15px; overflow: hidden; transition: transform 0.3s ease;">
+                        <img src="assets/images/home/shows3.jpg" alt="Featured Show" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="show-content" style="padding: 1.5rem;">
+                            <h3 class="text-gold" style="margin-bottom: 0.5rem;">Broadway Nights</h3>
+                            <p class="text-light" style="margin-bottom: 1rem;">The best of Broadway comes to you</p>
+                            <a href="tickets.html" class="cta-button login">Get Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="about-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="about-text fade-in">
+                        <h2 class="text-gold" style="font-size: 2.5rem; margin-bottom: 1.5rem;">About Royal Theater Group</h2>
+                        <p class="text-light" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                            For over three decades, Royal Theater Group has been the cornerstone of live entertainment, bringing world-class productions to audiences who appreciate the magic of theater.
+                        </p>
+                        <p class="text-light" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Our commitment to excellence, innovation, and artistic integrity has made us the premier destination for theater enthusiasts seeking unforgettable experiences.
+                        </p>
+                        <a href="about.html" class="cta-button register">Learn More</a>
+                    </div>
+                    <div class="about-image fade-in-delay-1">
+                        <img src="assets/images/home/about.jpg" alt="About Royal Theater" style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Us Section -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Why Choose Us</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Discover what makes Royal Theater Group the ultimate destination for live entertainment
+                    </p>
+                </div>
+                
+                <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="feature-item text-center fade-in-delay-1">
+                        <div class="feature-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">World-Class Productions</h3>
+                        <p class="text-light">Award-winning performances featuring renowned artists and directors</p>
+                    </div>
+                    
+                    <div class="feature-item text-center fade-in-delay-2">
+                        <div class="feature-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Premium Experience</h3>
+                        <p class="text-light">Luxurious seating, state-of-the-art sound, and impeccable service</p>
+                    </div>
+                    
+                    <div class="feature-item text-center fade-in-delay-3">
+                        <div class="feature-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Community Focus</h3>
+                        <p class="text-light">Engaging local talent and supporting arts education programs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Highlights Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Highlights & Achievements</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Celebrating excellence in theater and entertainment
+                    </p>
+                </div>
+                
+                <div class="highlights-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="highlight-item text-center fade-in-delay-1">
+                        <div class="highlight-number text-gold" style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;">500+</div>
+                        <div class="highlight-label text-light" style="font-size: 1.1rem;">Productions</div>
+                    </div>
+                    
+                    <div class="highlight-item text-center fade-in-delay-2">
+                        <div class="highlight-number text-gold" style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;">1M+</div>
+                        <div class="highlight-label text-light" style="font-size: 1.1rem;">Audience Members</div>
+                    </div>
+                    
+                    <div class="highlight-item text-center fade-in-delay-3">
+                        <div class="highlight-number text-gold" style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;">50+</div>
+                        <div class="highlight-label text-light" style="font-size: 1.1rem;">Awards Won</div>
+                    </div>
+                    
+                    <div class="highlight-item text-center fade-in-delay-4">
+                        <div class="highlight-number text-gold" style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;">30+</div>
+                        <div class="highlight-label text-light" style="font-size: 1.1rem;">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">What Our Audience Says</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Real experiences from our valued theater enthusiasts
+                    </p>
+                </div>
+                
+                <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="testimonial-card fade-in-delay-1" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-gold);">
+                        <div class="testimonial-content">
+                            <p class="text-light" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
+                                "Absolutely breathtaking performances! The Royal Theater Group never fails to deliver world-class entertainment that leaves you speechless."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-name text-gold" style="font-weight: 600; margin-bottom: 0.25rem;">Sarah Mitchell</div>
+                                <div class="author-title text-gray">Theater Enthusiast</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in-delay-2" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-gold);">
+                        <div class="testimonial-content">
+                            <p class="text-light" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
+                                "Every visit is a magical experience. The attention to detail, talented performers, and stunning productions make this my favorite theater."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-name text-gold" style="font-weight: 600; margin-bottom: 0.25rem;">Michael Chen</div>
+                                <div class="author-title text-gray">Regular Patron</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in-delay-3" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-gold);">
+                        <div class="testimonial-content">
+                            <p class="text-light" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
+                                "The quality of productions here rivals Broadway. I've been coming for years and the experience just keeps getting better!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-name text-gold" style="font-weight: 600; margin-bottom: 0.25rem;">Emma Rodriguez</div>
+                                <div class="author-title text-gray">Cultural Critic</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Section -->
+                <div class="cta-section text-center fade-in" style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05)); border-radius: 20px; border: 1px solid var(--border-light);">
+                    <h2 class="text-gold" style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Experience the Magic?</h2>
+                    <p class="text-light" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        Join thousands of theater lovers who have made Royal Theater Group their entertainment destination
+                    </p>
+                    <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="shows.html" class="cta-button register" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                            <i class="fas fa-ticket-alt"></i>
+                            Browse Shows
+                        </a>
+                        <a href="register.html" class="cta-button login" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                            <i class="fas fa-user-plus"></i>
+                            Become a Member
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Season Calendar Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">2024 Season Calendar</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Plan your theater visits throughout the year
+                    </p>
+                </div>
+                
+                <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="season-card fade-in-delay-1" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-gold);">
+                        <div class="season-header" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="season-icon" style="font-size: 2.5rem; color: var(--accent-gold); margin-right: 1rem;">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-gold" style="margin-bottom: 0.25rem;">Winter Season</h3>
+                                <p class="text-gray" style="font-size: 0.9rem;">January - March</p>
+                            </div>
+                        </div>
+                        <ul class="season-shows" style="list-style: none; padding: 0;">
+                            <li class="text-light" style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                The Phantom Returns
+                            </li>
+                            <li class="text-light" style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Winter Wonderland
+                            </li>
+                            <li class="text-light" style="padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Classic Drama Festival
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="season-card fade-in-delay-2" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-gold);">
+                        <div class="season-header" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="season-icon" style="font-size: 2.5rem; color: var(--accent-gold); margin-right: 1rem;">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-gold" style="margin-bottom: 0.25rem;">Summer Season</h3>
+                                <p class="text-gray" style="font-size: 0.9rem;">April - June</p>
+                            </div>
+                        </div>
+                        <ul class="season-shows" style="list-style: none; padding: 0;">
+                            <li class="text-light" style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Shakespeare in the Park
+                            </li>
+                            <li class="text-light" style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Broadway Nights
+                            </li>
+                            <li class="text-light" style="padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Summer Comedy Fest
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="season-card fade-in-delay-3" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-gold);">
+                        <div class="season-header" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="season-icon" style="font-size: 2.5rem; color: var(--accent-gold); margin-right: 1rem;">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-gold" style="margin-bottom: 0.25rem;">Fall Season</h3>
+                                <p class="text-gray" style="font-size: 0.9rem;">July - December</p>
+                            </div>
+                        </div>
+                        <ul class="season-shows" style="list-style: none; padding: 0;">
+                            <li class="text-light" style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                The Enchanted Forest
+                            </li>
+                            <li class="text-light" style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Mystery Theater Night
+                            </li>
+                            <li class="text-light" style="padding-left: 1rem; position: relative;">
+                                <i class="fas fa-ticket-alt" style="color: var(--accent-gold); position: absolute; left: 0; font-size: 0.8rem;"></i>
+                                Holiday Spectacular
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Theater Community Section -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="community-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="community-text fade-in">
+                        <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1.5rem;">Join Our Theater Community</h2>
+                        <p class="text-light" style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Become part of a vibrant community of theater lovers, artists, and creators. Share your passion for live performance.
+                        </p>
+                        <div class="community-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                            <div class="stat-item">
+                                <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 0.5rem;">5,000+</div>
+                                <div class="stat-label" style="color: var(--text-light);">Active Members</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 0.5rem;">200+</div>
+                                <div class="stat-label" style="color: var(--text-light);">Community Events</div>
+                            </div>
+                        </div>
+                        <div class="community-benefits" style="margin-bottom: 2rem;">
+                            <div class="benefit-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-star" style="color: var(--accent-gold); margin-right: 1rem;"></i>
+                                <span class="text-light">Exclusive member-only events</span>
+                            </div>
+                            <div class="benefit-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-users" style="color: var(--accent-gold); margin-right: 1rem;"></i>
+                                <span class="text-light">Meet actors and directors</span>
+                            </div>
+                            <div class="benefit-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <i class="fas fa-gift" style="color: var(--accent-gold); margin-right: 1rem;"></i>
+                                <span class="text-light">Special discounts and perks</span>
+                            </div>
+                        </div>
+                        <a href="register.html" class="cta-button register" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                            <i class="fas fa-heart"></i>
+                            Join Community
+                        </a>
+                    </div>
+                    <div class="community-image fade-in-delay-1">
+                        <img src="assets/images/home/community.jpg" alt="Theater Community" style="width: 100%; height: 450px; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Virtual Experiences Section -->
+        <section class="section-padding" style="background: #0a0a0a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Virtual Theater Experiences</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                        Enjoy world-class theater from the comfort of your home
+                    </p>
+                </div>
+                
+                <div class="virtual-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="virtual-card fade-in-delay-1" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; text-align: center; position: relative; overflow: hidden;">
+                        <div class="virtual-badge" style="position: absolute; top: 1rem; right: 1rem; background: #ff4444; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">LIVE</div>
+                        <div class="virtual-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">Live Streaming</h3>
+                        <p class="text-light" style="margin-bottom: 1.5rem;">Watch performances live in HD quality with real-time interaction</p>
+                        <div class="virtual-features" style="text-align: left; margin-bottom: 1.5rem;">
+                            <div class="feature" style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                <span>Multi-camera angles</span>
+                            </div>
+                            <div class="feature" style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                <span>Live chat with cast</span>
+                            </div>
+                        </div>
+                        <a href="#" class="cta-button login" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Watch Now</a>
+                    </div>
+                    
+                    <div class="virtual-card fade-in-delay-2" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <div class="virtual-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">VR Theater</h3>
+                        <p class="text-light" style="margin-bottom: 1.5rem;">Immersive 360° virtual reality theater experiences</p>
+                        <div class="virtual-features" style="text-align: left; margin-bottom: 1.5rem;">
+                            <div class="feature" style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                <span>Front row experience</span>
+                            </div>
+                            <div class="feature" style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                <span>Behind-the-scenes access</span>
+                            </div>
+                        </div>
+                        <a href="#" class="cta-button login" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Try VR</a>
+                    </div>
+                    
+                    <div class="virtual-card fade-in-delay-3" style="background: #2a2a2a; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <div class="virtual-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="text-gold" style="margin-bottom: 1rem;">On-Demand Library</h3>
+                        <p class="text-light" style="margin-bottom: 1.5rem;">Access our archive of past performances anytime</p>
+                        <div class="virtual-features" style="text-align: left; margin-bottom: 1.5rem;">
+                            <div class="feature" style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                <span>500+ recorded shows</span>
+                            </div>
+                            <div class="feature" style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                                <span>Exclusive content</span>
+                            </div>
+                        </div>
+                        <a href="#" class="cta-button login" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Browse Library</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="cinematic-footer" style="background: #0a0a0a; border-top: 1px solid var(--border-light); padding: 3rem 0 1rem;">
+        <div class="container">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="brand-identity">
+                        <div class="brand-logo">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <span class="brand-name">Royal Theater Group</span>
+                    </div>
+                    <p class="text-light" style="margin-top: 1rem; font-size: 0.9rem;">
+                        Experience the magic of live theater with world-class productions and unforgettable entertainment.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4 class="text-gold" style="margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="shows.html" class="text-light" style="text-decoration: none; transition: color 0.3s;">Shows</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="tickets.html" class="text-light" style="text-decoration: none; transition: color 0.3s;">Tickets</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="auditions.html" class="text-light" style="text-decoration: none; transition: color 0.3s;">Auditions</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="dashboard.html" class="text-light" style="text-decoration: none; transition: color 0.3s;">Dashboard</a></li>
+</ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4 class="text-gold" style="margin-bottom: 1rem;">Contact Us</h4>
+                    <p class="text-light" style="margin-bottom: 0.5rem;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                        123 Theater District, Arts City, AC 12345
+                    </p>
+                    <p class="text-light" style="margin-bottom: 0.5rem;">
+                        <i class="fas fa-phone" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                        (555) 123-4567
+                    </p>
+                    <p class="text-light">
+                        <i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+                        info@royaltheater.com
+                    </p>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="footer-social">
+                    <h4 class="text-gold" style="margin-bottom: 1rem;">Follow Us</h4>
+                    <div class="social-links" style="display: flex; gap: 1rem;">
+                        <a href="#" class="text-light" style="font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light" style="font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light" style="font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light" style="font-size: 1.5rem; transition: color 0.3s;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom" style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+                <p class="text-gray" style="font-size: 0.9rem;">
+                    &copy; 2024 Royal Theater Group. All rights reserved. | 
+                    <a href="privacy-policy.html" class="text-gold" style="text-decoration: none;">Privacy Policy</a> | 
+                    <a href="terms-conditions.html" class="text-gold" style="text-decoration: none;">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenuPanel.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuClose.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuToggle.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Header Scroll Effect
+        const header = document.getElementById('mainHeader');
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add JS class to enable animations
+        document.documentElement.classList.add('js');
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3, .fade-in-delay-4').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Add hover effects to cards
+        document.querySelectorAll('.show-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

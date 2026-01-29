@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Royal Theater Group</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Theater Group Website</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="shows.html">Shows</a></li>
+                    <li><a href="auditions.html">Auditions</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="user-menu">
+                    <div class="user-avatar admin">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <span class="user-name">Admin</span>
+                    <div class="user-dropdown">
+                        <a href="admin-dashboard.html" class="active">Dashboard</a>
+                        <a href="#">Settings</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard Hero -->
+    <section class="admin-dashboard-hero">
+        <div class="container">
+            <div class="admin-welcome">
+                <h1>Admin Dashboard</h1>
+                <p>Manage shows, users, bookings, and theater operations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Content -->
+    <section class="admin-dashboard-content">
+        <div class="container">
+            <div class="dashboard-layout">
+                <!-- Admin Sidebar -->
+                <div class="admin-sidebar">
+                    <nav class="sidebar-nav">
+                        <ul>
+                            <li><a href="#overview" class="nav-link active"><i class="fas fa-chart-line"></i> Overview</a></li>
+                            <li><a href="#shows" class="nav-link"><i class="fas fa-theater-masks"></i> Shows</a></li>
+                            <li><a href="#bookings" class="nav-link"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+                            <li><a href="#auditions" class="nav-link"><i class="fas fa-users"></i> Auditions</a></li>
+                            <li><a href="#users" class="nav-link"><i class="fas fa-user-friends"></i> Users</a></li>
+                            <li><a href="#messages" class="nav-link"><i class="fas fa-envelope"></i> Messages</a></li>
+                            <li><a href="#analytics" class="nav-link"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                            <li><a href="#settings" class="nav-link"><i class="fas fa-cog"></i> Settings</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Main Admin Content -->
+                <div class="admin-main">
+                    <!-- Overview Section -->
+                    <div class="admin-section active" id="overview">
+                        <h2>System Overview</h2>
+                        
+                        <!-- Admin Stats -->
+                        <div class="admin-stats-grid">
+                            <div class="admin-stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-theater-masks"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Active Shows</h3>
+                                    <span class="stat-number">8</span>
+                                    <p>Currently running</p>
+                                </div>
+                            </div>
+                            <div class="admin-stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Total Bookings</h3>
+                                    <span class="stat-number">1,247</span>
+                                    <p>This month</p>
+                                </div>
+                            </div>
+                            <div class="admin-stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Total Users</h3>
+                                    <span class="stat-number">5,432</span>
+                                    <p>Registered members</p>
+                                </div>
+                            </div>
+                            <div class="admin-stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Revenue</h3>
+                                    <span class="stat-number">$45,678</span>
+                                    <p>This month</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="quick-actions">
+                            <h3>Quick Actions</h3>
+                            <div class="actions-grid">
+                                <button class="action-btn">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add New Show</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    <span>Schedule Performance</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-bullhorn"></i>
+                                    <span>Send Announcement</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-file-export"></i>
+                                    <span>Export Reports</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="admin-activity">
+                            <h3>Recent System Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon booking">
+                                        <i class="fas fa-ticket-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>New Booking</h4>
+                                        <p>John Doe booked 2 tickets for Chicago</p>
+                                        <span class="activity-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon audition">
+                                        <i class="fas fa-theater-masks"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>New Audition Application</h4>
+                                        <p>Sarah Smith applied for Romeo & Juliet</p>
+                                        <span class="activity-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon user">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>New User Registration</h4>
+                                        <p>Mike Johnson joined as Premium Member</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shows Management -->
+                    <div class="admin-section" id="shows">
+                        <div class="section-header">
+                            <h2>Shows Management</h2>
+                            <button class="btn btn-primary">Add New Show</button>
+                        </div>
+                        
+                        <div class="shows-table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Show Name</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Next Performance</th>
+                                        <th>Tickets Sold</th>
+                                        <th>Revenue</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="show-info">
+                                                <div class="show-thumb" style="background-image: url('assets/images/shows/hamlet.jpg');"></div>
+                                                <div>
+                                                    <strong>Hamlet</strong>
+                                                    <small>Shakespeare's tragedy</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="tag drama">Drama</span></td>
+                                        <td><span class="status active">Now Playing</span></td>
+                                        <td>Mar 15, 2024</td>
+                                        <td>342/500</td>
+                                        <td>$15,390</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="show-info">
+                                                <div class="show-thumb" style="background-image: url('assets/images/shows/chicago.jpg');"></div>
+                                                <div>
+                                                    <strong>Chicago</strong>
+                                                    <small>Musical spectacular</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="tag musical">Musical</span></td>
+                                        <td><span class="status active">Now Playing</span></td>
+                                        <td>Mar 20, 2024</td>
+                                        <td>456/600</td>
+                                        <td>$27,360</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="show-info">
+                                                <div class="show-thumb" style="background-image: url('assets/images/shows/dreamplay.jpg');"></div>
+                                                <div>
+                                                    <strong>A Dream Play</strong>
+                                                    <small>Experimental theater</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="tag experimental">Experimental</span></td>
+                                        <td><span class="status upcoming">Coming Soon</span></td>
+                                        <td>May 12, 2024</td>
+                                        <td>0/200</td>
+                                        <td>$0</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Bookings Management -->
+                    <div class="admin-section" id="bookings">
+                        <div class="section-header">
+                            <h2>Bookings Management</h2>
+                            <div class="header-actions">
+                                <input type="text" placeholder="Search bookings..." class="search-input">
+                                <select class="filter-select">
+                                    <option>All Status</option>
+                                    <option>Confirmed</option>
+                                    <option>Pending</option>
+                                    <option>Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="bookings-table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Customer</th>
+                                        <th>Show</th>
+                                        <th>Date</th>
+                                        <th>Seats</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#BK001234</td>
+                                        <td>John Doe</td>
+                                        <td>Chicago</td>
+                                        <td>Mar 25, 2024</td>
+                                        <td>A12, A13</td>
+                                        <td>$150.00</td>
+                                        <td><span class="status confirmed">Confirmed</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                                <button class="btn-icon warning"><i class="fas fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#BK001235</td>
+                                        <td>Sarah Smith</td>
+                                        <td>Hamlet</td>
+                                        <td>Apr 2, 2024</td>
+                                        <td>C8</td>
+                                        <td>$45.00</td>
+                                        <td><span class="status confirmed">Confirmed</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                                <button class="btn-icon warning"><i class="fas fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Auditions Management -->
+                    <div class="admin-section" id="auditions">
+                        <div class="section-header">
+                            <h2>Auditions Management</h2>
+                            <button class="btn btn-primary">Create Audition Call</button>
+                        </div>
+                        
+                        <div class="auditions-grid">
+                            <div class="audition-admin-card">
+                                <div class="audition-header">
+                                    <h3>Romeo & Juliet</h3>
+                                    <span class="status-badge open">Open</span>
+                                </div>
+                                <div class="audition-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">45</span>
+                                        <span class="stat-label">Applications</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">12</span>
+                                        <span class="stat-label">Callbacks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">3</span>
+                                        <span class="stat-label">Roles Available</span>
+                                    </div>
+                                </div>
+                                <div class="audition-actions">
+                                    <button class="btn btn-outline">View Applications</button>
+                                    <button class="btn btn-secondary">Manage Callbacks</button>
+                                </div>
+                            </div>
+
+                            <div class="audition-admin-card">
+                                <div class="audition-header">
+                                    <h3>The Glass Menagerie</h3>
+                                    <span class="status-badge closed">Closed</span>
+                                </div>
+                                <div class="audition-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">32</span>
+                                        <span class="stat-label">Applications</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">8</span>
+                                        <span class="stat-label">Callbacks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">4</span>
+                                        <span class="stat-label">Roles Cast</span>
+                                    </div>
+                                </div>
+                                <div class="audition-actions">
+                                    <button class="btn btn-outline">View Results</button>
+                                    <button class="btn btn-secondary">Archive</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Users Management -->
+                    <div class="admin-section" id="users">
+                        <div class="section-header">
+                            <h2>Users Management</h2>
+                            <div class="header-actions">
+                                <input type="text" placeholder="Search users..." class="search-input">
+                                <button class="btn btn-primary">Add User</button>
+                            </div>
+                        </div>
+                        
+                        <div class="users-table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Member Since</th>
+                                        <th>Bookings</th>
+                                        <th>Spent</th>
+                                        <th>Member Tier</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="user-info">
+                                                <div class="user-avatar">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>John Doe</strong>
+                                                    <small>Premium Member</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>john.doe@example.com</td>
+                                        <td>Jan 15, 2023</td>
+                                        <td>24</td>
+                                        <td>$1,245</td>
+                                        <td><span class="tier premium">Premium</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon danger"><i class="fas fa-ban"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="user-info">
+                                                <div class="user-avatar">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>Sarah Smith</strong>
+                                                    <small>Free Member</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>sarah.smith@example.com</td>
+                                        <td>Mar 2, 2024</td>
+                                        <td>3</td>
+                                        <td>$135</td>
+                                        <td><span class="tier free">Free</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon danger"><i class="fas fa-ban"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Messages Management -->
+                    <div class="admin-section" id="messages">
+                        <div class="section-header">
+                            <h2>Contact Messages</h2>
+                            <div class="header-actions">
+                                <span class="unread-count">5 unread</span>
+                                <button class="btn btn-outline">Mark All Read</button>
+                            </div>
+                        </div>
+                        
+                        <div class="messages-list">
+                            <div class="message-item unread">
+                                <div class="message-header">
+                                    <div class="message-sender">
+                                        <strong>Mike Johnson</strong>
+                                        <span>mike.j@example.com</span>
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">2 hours ago</span>
+                                        <span class="message-subject">Group Booking Inquiry</span>
+                                    </div>
+                                </div>
+                                <div class="message-content">
+                                    <p>Hi, I'm interested in booking 20 tickets for our company outing to see Chicago. What group rates do you offer?</p>
+                                </div>
+                                <div class="message-actions">
+                                    <button class="btn btn-primary">Reply</button>
+                                    <button class="btn btn-outline">Archive</button>
+                                </div>
+                            </div>
+
+                            <div class="message-item">
+                                <div class="message-header">
+                                    <div class="message-sender">
+                                        <strong>Emily Davis</strong>
+                                        <span>emily.d@example.com</span>
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">1 day ago</span>
+                                        <span class="message-subject">Question about accessibility</span>
+                                    </div>
+                                </div>
+                                <div class="message-content">
+                                    <p>Is your theater wheelchair accessible? I need to know about accessible seating options for the upcoming Hamlet production.</p>
+                                </div>
+                                <div class="message-actions">
+                                    <button class="btn btn-primary">Reply</button>
+                                    <button class="btn btn-outline">Archive</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Section -->
+                    <div class="admin-section" id="analytics">
+                        <h2>Analytics & Reports</h2>
+                        
+                        <div class="analytics-grid">
+                            <div class="analytics-card">
+                                <h3>Revenue Overview</h3>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-line"></i>
+                                    <p>Revenue chart would be displayed here</p>
+                                </div>
+                            </div>
+                            
+                            <div class="analytics-card">
+                                <h3>Attendance Trends</h3>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>Attendance chart would be displayed here</p>
+                                </div>
+                            </div>
+                            
+                            <div class="analytics-card">
+                                <h3>Popular Shows</h3>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <p>Show popularity chart would be displayed here</p>
+                                </div>
+                            </div>
+                            
+                            <div class="analytics-card">
+                                <h3>Member Growth</h3>
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-users-chart"></i>
+                                    <p>Member growth chart would be displayed here</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reports-section">
+                            <h3>Export Reports</h3>
+                            <div class="reports-grid">
+                                <button class="report-btn">
+                                    <i class="fas fa-file-excel"></i>
+                                    <span>Export Sales Report</span>
+                                </button>
+                                <button class="report-btn">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Export Attendance Report</span>
+                                </button>
+                                <button class="report-btn">
+                                    <i class="fas fa-file-csv"></i>
+                                    <span>Export User Data</span>
+                                </button>
+                                <button class="report-btn">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Generate Financial Summary</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="admin-section" id="settings">
+                        <h2>System Settings</h2>
+                        
+                        <div class="settings-grid">
+                            <div class="setting-card">
+                                <h3>Theater Configuration</h3>
+                                <div class="setting-item">
+                                    <label>Default Ticket Price</label>
+                                    <input type="number" value="45">
+                                </div>
+                                <div class="setting-item">
+                                    <label>Max Seats per Show</label>
+                                    <input type="number" value="500">
+                                </div>
+                                <div class="setting-item">
+                                    <label>Booking Cutoff (hours)</label>
+                                    <input type="number" value="2">
+                                </div>
+                                <button class="btn btn-primary">Save Settings</button>
+                            </div>
+
+                            <div class="setting-card">
+                                <h3>Email Settings</h3>
+                                <div class="setting-item">
+                                    <label>Booking Confirmation Email</label>
+                                    <textarea rows="3">Template content here...</textarea>
+                                </div>
+                                <div class="setting-item">
+                                    <label>Send Reminders</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <button class="btn btn-primary">Update Email Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-theater-masks"></i>
+                        <h3>Theater Group Website</h3>
+                    </div>
+                    <p>Experience the magic of live theater with our world-class productions, talented artists, and unforgettable performances.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shows.html">Shows & Events</a></li>
+                        <li><a href="auditions.html">Auditions</a></li>
+                        <li><a href="tickets.html">Book Tickets</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Upcoming Shows</h4>
+                    <ul>
+                        <li><a href="shows.html">Hamlet - Mar 15</a></li>
+                        <li><a href="shows.html">Chicago - Apr 10</a></li>
+                        <li><a href="shows.html">A Dream Play - May 12</a></li>
+                        <li><a href="shows.html">View All Shows</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Theater Group Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

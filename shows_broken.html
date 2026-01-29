@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows - Royal Theater Group</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Theater Group Website</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home2.html">Home 2</a></li>
+                    <li><a href="shows.html" class="active">Shows</a></li>
+                    <li><a href="auditions.html">Auditions</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shows Hero Section -->
+    <section class="shows-hero">
+        <div class="container">
+            <div class="shows-hero-content">
+                <h1 class="shows-hero-title">Our Spectacular Shows</h1>
+                <p class="shows-hero-subtitle">Discover world-class performances, from timeless classics to cutting-edge contemporary productions</p>
+                <div class="shows-filter">
+                    <button class="filter-btn active" data-filter="all">All Shows</button>
+                    <button class="filter-btn" data-filter="current">Now Playing</button>
+                    <button class="filter-btn" data-filter="upcoming">Coming Soon</button>
+                    <button class="filter-btn" data-filter="musical">Musicals</button>
+                    <button class="filter-btn" data-filter="drama">Drama</button>
+                    <button class="filter-btn" data-filter="comedy">Comedy</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Shows Section -->
+    <section class="current-shows">
+        <div class="container">
+            <h2 class="section-title">Now Playing</h2>
+            <div class="shows-grid">
+                <div class="show-card">
+                    <div class="show-image" style="background-image: linear-gradient(135deg, #8b0000, #660000);">
+                        <div class="show-overlay">
+                            <span class="show-tag">Now Playing</span>
+                            <span class="show-status">Limited Seats</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Hamlet</h3>
+                        <p class="show-description">Shakespeare's masterpiece of revenge, madness, and moral corruption. A haunting tale that resonates through centuries.</p>
+                        <div class="show-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 15 - Apr 10</span>
+                            <span><i class="fas fa-clock"></i> 7:30 PM</span>
+                            <span><i class="fas fa-tag"></i> Drama</span>
+                        </div>
+                        <div class="show-pricing">
+                            <span class="price-range">$45 - $125</span>
+                        </div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Now</a>
+                            <a href="#" class="btn btn-outline">Trailer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image" style="background-image: linear-gradient(135deg, #d4af37, #b8941f);">
+                        <div class="show-overlay">
+                            <span class="show-tag">Now Playing</span>
+                            <span class="show-status">Selling Fast</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>The Comedy of Errors</h3>
+                        <p class="show-description">Shakespeare's hilarious tale of mistaken identities and chaotic confusion in this fresh, modern interpretation.</p>
+                        <div class="show-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 20 - Apr 5</span>
+                            <span><i class="fas fa-clock"></i> 8:00 PM</span>
+                            <span><i class="fas fa-tag"></i> Comedy</span>
+                        </div>
+                        <div class="show-pricing">
+                            <span class="price-range">$35 - $95</span>
+                        </div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Now</a>
+                            <a href="#" class="btn btn-outline">Trailer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image" style="background-image: linear-gradient(135deg, #2c1810, #1a1a1a);">
+                        <div class="show-overlay">
+                            <span class="show-tag">Now Playing</span>
+                            <span class="show-status">Weekend Special</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Streetcar Named Desire</h3>
+                        <p class="show-description">Tennessee Williams' powerful drama of desire, desperation, and the decline of the American South.</p>
+                        <div class="show-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 25 - Apr 20</span>
+                            <span><i class="fas fa-clock"></i> 7:00 PM</span>
+                            <span><i class="fas fa-tag"></i> Drama</span>
+                        </div>
+                        <div class="show-pricing">
+                            <span class="price-range">$40 - $110</span>
+                        </div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Book Now</a>
+                            <a href="#" class="btn btn-outline">Trailer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Shows Section -->
+    <section class="upcoming-shows">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <div class="shows-grid">
+                <div class="show-card">
+                    <div class="show-image" style="background-image: linear-gradient(135deg, #8b0000, #d4af37);">
+                        <div class="show-overlay">
+                            <span class="show-tag opening-soon">Opening Soon</span>
+                            <span class="show-status">Pre-Booking Open</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>Chicago</h3>
+                        <p class="show-description">The Tony-winning musical that brings the razzle-dazzle of 1920s Chicago to life with stunning choreography.</p>
+                        <div class="show-meta">
+                            <span><i class="fas fa-calendar"></i> Apr 20 - May 15</span>
+                            <span><i class="fas fa-clock"></i> 8:00 PM</span>
+                            <span><i class="fas fa-tag"></i> Musical</span>
+                        </div>
+                        <div class="show-pricing">
+                            <span class="price-range">$55 - $150</span>
+                        </div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Pre-Book</a>
+                            <a href="#" class="btn btn-outline">Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image" style="background-image: linear-gradient(135deg, #660000, #2c1810);">
+                        <div class="show-overlay">
+                            <span class="show-tag opening-soon">Opening Soon</span>
+                            <span class="show-status">Early Bird</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>A Dream Play</h3>
+                        <p class="show-description">Strindberg's surreal masterpiece where reality and dreams intertwine in a breathtaking visual spectacle.</p>
+                        <div class="show-meta">
+                            <span><i class="fas fa-calendar"></i> May 20 - Jun 5</span>
+                            <span><i class="fas fa-clock"></i> 7:00 PM</span>
+                            <span><i class="fas fa-tag"></i> Experimental</span>
+                        </div>
+                        <div class="show-pricing">
+                            <span class="price-range">$40 - $120</span>
+                        </div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Pre-Book</a>
+                            <a href="#" class="btn btn-outline">Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-card">
+                    <div class="show-image" style="background-image: linear-gradient(135deg, #d4af37, #8b0000);">
+                        <div class="show-overlay">
+                            <span class="show-tag opening-soon">Opening Soon</span>
+                            <span class="show-status">Limited Run</span>
+                        </div>
+                    </div>
+                    <div class="show-content">
+                        <h3>The Phantom of the Opera</h3>
+                        <p class="show-description">Andrew Lloyd Webber's haunting tale of love and obsession beneath the Paris Opera House.</p>
+                        <div class="show-meta">
+                            <span><i class="fas fa-calendar"></i> Jun 10 - Jul 30</span>
+                            <span><i class="fas fa-clock"></i> 7:30 PM</span>
+                            <span><i class="fas fa-tag"></i> Musical</span>
+                        </div>
+                        <div class="show-pricing">
+                            <span class="price-range">$65 - $200</span>
+                        </div>
+                        <div class="show-actions">
+                            <a href="tickets.html" class="btn btn-primary">Pre-Book</a>
+                            <a href="#" class="btn btn-outline">Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Events Section -->
+    <section class="special-events">
+        <div class="container">
+            <h2 class="section-title">Special Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">APR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Theater Workshop Weekend</h3>
+                        <p>Join professional actors and directors for an intensive weekend of acting, directing, and stagecraft workshops.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 10:00 AM - 6:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Theater & Studios</span>
+                            <span><i class="fas fa-tag"></i> $150 for weekend pass</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Register Now</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">APR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Meet the Cast: Hamlet</h3>
+                        <p>An exclusive Q&A session with the cast and creative team of our production of Hamlet.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 6:00 PM - 8:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Theater</span>
+                            <span><i class="fas fa-tag"></i> Free for ticket holders</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">RSVP</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">08</span>
+                        <span class="month">MAY</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Annual Gala Night</h3>
+                        <p>Join us for an elegant evening celebrating 50 years of exceptional theater with performances, dinner, and awards.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 7:00 PM - Late</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Grand Ballroom</span>
+                            <span><i class="fas fa-tag"></i> $250 per person</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Purchase Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+        <div class="container">
+            <h2 class="section-title">Performance Calendar</h2>
+            <div class="calendar-container">
+                <div class="calendar-month">
+                    <h3>April 2024</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-day header">Sun</div>
+                        <div class="calendar-day header">Mon</div>
+                        <div class="calendar-day header">Tue</div>
+                        <div class="calendar-day header">Wed</div>
+                        <div class="calendar-day header">Thu</div>
+                        <div class="calendar-day header">Fri</div>
+                        <div class="calendar-day header">Sat</div>
+                        
+                        <div class="calendar-day empty">31</div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div>
+                        <div class="calendar-day has-show">
+                            <span class="date">6</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day">7</div>
+                        <div class="calendar-day">8</div>
+                        <div class="calendar-day">9</div>
+                        <div class="calendar-day">10</div>
+                        <div class="calendar-day">11</div>
+                        <div class="calendar-day has-show">
+                            <span class="date">12</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day has-show">
+                            <span class="date">13</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day">14</div>
+                        <div class="calendar-day has-show">
+                            <span class="date">15</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day">16</div>
+                        <div class="calendar-day">17</div>
+                        <div class="calendar-day">18</div>
+                        <div class="calendar-day">19</div>
+                        <div class="calendar-day has-show">
+                            <span class="date">20</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day has-show">
+                            <span class="date">21</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day has-show">
+                            <span class="date">22</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day">23</div>
+                        <div class="calendar-day">24</div>
+                        <div class="calendar-day">25</div>
+                        <div class="calendar-day">26</div>
+                        <div class="calendar-day">27</div>
+                        <div class="calendar-day has-show">
+                            <span class="date">28</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day has-show">
+                            <span class="date">29</span>
+                            <span class="show-indicator">🎭</span>
+                        </div>
+                        <div class="calendar-day">30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-theater-masks"></i>
+                        <h3>Theater Group Website</h3>
+                    </div>
+                    <p>Experience the magic of live theater with our world-class productions, talented artists, and unforgettable performances.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shows.html">Shows & Events</a></li>
+                        <li><a href="auditions.html">Auditions</a></li>
+                        <li><a href="tickets.html">Book Tickets</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Current Shows</h4>
+                    <ul>
+                        <li><a href="shows.html">Hamlet</a></li>
+                        <li><a href="shows.html">The Comedy of Errors</a></li>
+                        <li><a href="shows.html">Streetcar Named Desire</a></li>
+                        <li><a href="shows.html">View All Shows</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Theater Group Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

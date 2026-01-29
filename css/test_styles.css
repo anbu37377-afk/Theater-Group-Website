@@ -1,0 +1,75 @@
+/* Test CSS File */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5dc !important;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: #2c1810;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #d4af37;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu a.active {
+    color: #d4af37;
+}
+
+.shows-hero {
+    background: linear-gradient(135deg, #2c1810 0%, #8b0000 100%);
+    padding: 200px 0 80px;
+    color: white;
+    text-align: center;
+}
+
+.shows-hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.shows-hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
