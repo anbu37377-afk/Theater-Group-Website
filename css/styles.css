@@ -116,13 +116,10 @@ p {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
-    display: flex;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    min-height: 60px;
-    transition: height var(--transition-normal);
-    flex-wrap: nowrap;
     gap: var(--spacing-lg);
 }
 
@@ -138,79 +135,37 @@ p {
     text-decoration: none;
     color: var(--text-light);
     transition: all var(--transition-normal);
-    animation: logoFadeIn 1s ease-out 0.3s both;
-    flex-shrink: 0;
-    min-width: 0;
 }
 
-@keyframes logoFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.brand-identity:hover {
+    color: var(--accent-gold);
+    transform: translateY(-2px);
 }
 
 .brand-logo {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent-gold), #8b6914);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-md);
-    color: var(--primary-dark);
-    position: relative;
-    overflow: hidden;
+    font-size: var(--font-lg);
+    color: var(--text-light);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    transition: all var(--transition-normal);
 }
 
-.brand-logo::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transform: rotate(45deg);
-    animation: logoShimmer 3s infinite;
-}
-
-@keyframes logoShimmer {
-    0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+.brand-identity:hover .brand-logo {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
 }
 
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: var(--font-lg);
+    font-size: var(--font-xl);
     font-weight: 700;
-    color: var(--text-light);
-    white-space: nowrap;
-}
-
-.brand-name::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
-    transition: width var(--transition-normal);
-}
-
-.brand-identity:hover .brand-name::after {
-    width: 100%;
-}
-
-.brand-identity:hover {
-    transform: translateY(-2px);
-    text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    letter-spacing: -0.02em;
 }
 
 /* ===== CENTER COLUMN - MAIN NAVIGATION ===== */
@@ -218,27 +173,24 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex: 1;
-    flex-shrink: 1;
+    gap: var(--spacing-md);
 }
 
 .nav-item {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
 }
 
 .nav-link {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
@@ -254,7 +206,6 @@ p {
     text-align: center;
     min-width: 0;
     line-height: 1.4;
-    vertical-align: middle;
 }
 
 .nav-link::before {
@@ -451,16 +402,16 @@ p {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
-    max-width: 400px;
+    width: 85%;
+    max-width: 350px;
     height: 100vh;
     background: linear-gradient(135deg, rgba(10, 10, 10, 0.98), rgba(26, 26, 26, 0.98));
     backdrop-filter: blur(20px);
-    z-index: 2000;
-    transition: right var(--transition-cinematic);
+    z-index: 1002;
+    transition: all var(--transition-normal);
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid var(--border-light);
 }
 
 .mobile-menu-panel.active {
@@ -471,8 +422,9 @@ p {
     padding: var(--spacing-lg);
     border-bottom: 1px solid var(--border-light);
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background: rgba(212, 175, 55, 0.05);
     flex-shrink: 0;
 }
 
@@ -508,10 +460,9 @@ p {
     display: block;
     color: var(--text-light);
     text-decoration: none;
-    font-size: var(--font-lg);
     font-weight: 500;
     padding: var(--spacing-md);
-    border-radius: 12px;
+    border-radius: 8px;
     transition: all var(--transition-normal);
     border-left: 3px solid transparent;
 }
@@ -536,6 +487,7 @@ p {
     flex-direction: column;
     gap: var(--spacing-sm);
     flex-shrink: 0;
+    background: rgba(212, 175, 55, 0.05);
 }
 
 .mobile-menu-actions .cta-button {
@@ -544,15 +496,15 @@ p {
     padding: var(--spacing-md);
 }
 
-/* ===== OVERLAY ===== */
+/* ===== MOBILE MENU OVERLAY ===== */
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 1999;
+    z-index: 1001;
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-normal);
@@ -563,42 +515,103 @@ p {
     visibility: visible;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE HEADER DESIGN ===== */
+/* Tablet View (768px - 1024px) */
 @media (max-width: 1024px) {
     .header-container {
         padding: 0 var(--spacing-md);
         gap: var(--spacing-md);
     }
     
-    .nav-links {
-        gap: var(--spacing-md);
+    .nav-list {
+        gap: var(--spacing-sm);
     }
     
     .nav-link {
-        font-size: var(--font-sm);
         padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-xs);
     }
     
     .cta-button {
-        font-size: var(--font-sm);
-        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .brand-name {
+        font-size: var(--font-lg);
     }
 }
 
+/* Mobile View (max-width: 768px) */
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: flex !important;
+    .header-container {
+        grid-template-columns: 1fr auto;
+        padding: 0 var(--spacing-md);
+        gap: var(--spacing-md);
+        height: 60px;
     }
     
-    /* Hide desktop navigation on mobile */
-    .nav-links {
+    /* Hide desktop navigation completely */
+    .main-navigation {
         display: none !important;
     }
     
-    .header-actions .cta-button:not(.mobile-menu-toggle) {
-        display: none;
+    /* Hide desktop action buttons, keep only mobile toggle */
+    .action-buttons .cta-button:not(.mobile-menu-toggle) {
+        display: none !important;
     }
     
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex !important;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    /* Adjust brand positioning */
+    .brand-identity {
+        justify-content: flex-start;
+    }
+    
+    .brand-name {
+        font-size: var(--font-base);
+    }
+    
+    .cinematic-header.scrolled .header-container {
+        height: 50px;
+    }
+}
+
+/* Small Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 var(--spacing-sm);
+        gap: var(--spacing-sm);
+        height: 55px;
+    }
+    
+    .brand-name {
+        font-size: var(--font-sm);
+    }
+    
+    .brand-logo {
+        width: 35px;
+        height: 35px;
+        font-size: var(--font-base);
+    }
+    
+    .mobile-menu-toggle {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    .cinematic-header.scrolled .header-container {
+        height: 45px;
+    }
+}
+
+/* ===== RESPONSIVE GRID FIXES ===== */
+@media (max-width: 768px) {
     .container {
         padding: 0 var(--spacing-md);
         max-width: 100%;
@@ -725,23 +738,12 @@ p {
 }
 
 @media (max-width: 480px) {
-    .header-container {
-        padding: 0 var(--spacing-xs);
-        gap: var(--spacing-sm);
-    }
-    
     .container {
         padding: 0 var(--spacing-sm);
     }
     
     .section-padding {
         padding: var(--spacing-lg) 0;
-    }
-    
-    .mobile-menu-toggle {
-        min-width: 35px;
-        min-height: 35px;
-        font-size: var(--font-md);
     }
     
     /* Typography */
