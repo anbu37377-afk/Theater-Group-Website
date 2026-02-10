@@ -23,7 +23,7 @@
     <!-- Chart.js for Analytics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body class="dashboard-page">
     <!-- ===== CINEMATIC HEADER ===== -->
     <header class="cinematic-header" id="mainHeader">
         <div class="header-container">
@@ -35,17 +35,6 @@
                 <span class="brand-name">Royal Theater Group</span>
             </a>
             
-            <!-- Center Zone - Main Navigation -->
-            <nav class="main-navigation">
-                <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="shows.html" class="nav-link">Shows</a></li>
-                    <li class="nav-item"><a href="auditions.html" class="nav-link">Auditions</a></li>
-                    <li class="nav-item"><a href="tickets.html" class="nav-link">Tickets</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            
             <!-- Right Zone - Action Buttons -->
             <div class="action-buttons">
                 <a href="dashboard.html" class="cta-button login active">
@@ -55,6 +44,10 @@
                 <a href="#" class="cta-button register">
                     <i class="fas fa-user"></i>
                     Profile
+                </a>
+                <a href="index.html" class="cta-button logout-button">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
                 </a>
             </div>
             
@@ -76,7 +69,7 @@
                 <div class="brand-logo">
                     <i class="fas fa-theater-masks"></i>
                 </div>
-                <span class="brand-name">Royal Theater</span>
+                <span class="brand-name">Royal Theater Group</span>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuClose" aria-label="Close menu">
                 <i class="fas fa-times"></i>
@@ -84,11 +77,6 @@
         </div>
         
         <nav class="mobile-menu-nav">
-            <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
-            <div class="mobile-nav-item"><a href="shows.html" class="mobile-nav-link">Shows</a></div>
-            <div class="mobile-nav-item"><a href="auditions.html" class="mobile-nav-link">Auditions</a></div>
-            <div class="mobile-nav-item"><a href="tickets.html" class="mobile-nav-link">Tickets</a></div>
-            <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
             <div class="mobile-nav-item active"><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></div>
         </nav>
         
@@ -440,7 +428,7 @@
     </main>
     
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
     <script>
         // Dashboard specific JavaScript
         document.addEventListener('DOMContentLoaded', function() {
@@ -554,5 +542,8 @@
             }
         }
     </script>
+    <script src="js/theme-toggle.js"></script>
 </body>
 </html>
+
+

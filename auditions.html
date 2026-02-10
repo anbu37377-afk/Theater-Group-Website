@@ -90,7 +90,7 @@
                 <div class="brand-logo">
                     <i class="fas fa-theater-masks"></i>
                 </div>
-                <span class="brand-name">Royal Theater</span>
+                <span class="brand-name">Royal Theater Group</span>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuClose" aria-label="Close mobile menu">
                 <div class="hamburger-icon">
@@ -334,6 +334,55 @@
                 </div>
             </div>
         </section>
+
+        <!-- Audition Schedule Table -->
+        <section class="section-padding" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="text-gold" style="font-size: 3rem; margin-bottom: 1rem;">Audition Schedule</h2>
+                    <p class="text-light" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                        Review upcoming audition slots and callback windows for each production.
+                    </p>
+                </div>
+
+                <div class="table-responsive fade-in-delay-1" style="margin-top: 3rem;">
+                    <table class="audition-schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Production</th>
+                                <th>Audition Date</th>
+                                <th>Time</th>
+                                <th>Venue</th>
+                                <th>Callback Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>The Phantom Returns</td>
+                                <td>March 15, 2024</td>
+                                <td>2:00 PM - 6:00 PM</td>
+                                <td>Main Stage Theater</td>
+                                <td>March 20, 2024</td>
+                            </tr>
+                            <tr>
+                                <td>Shakespeare in the Park</td>
+                                <td>March 22, 2024</td>
+                                <td>1:00 PM - 5:00 PM</td>
+                                <td>Outdoor Amphitheater</td>
+                                <td>March 27, 2024</td>
+                            </tr>
+                            <tr>
+                                <td>Broadway Nights</td>
+                                <td>March 29, 2024</td>
+                                <td>3:00 PM - 7:00 PM</td>
+                                <td>Grand Theater Hall</td>
+                                <td>April 3, 2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
         
         <!-- Simple Application Form -->
         <section class="section-padding" style="background: #1a1a1a;" id="audition-form">
@@ -373,7 +422,7 @@
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 2rem;">
-                            <label style="display: flex; align-items: center; color: white; cursor: pointer;">
+                            <label class="audition-terms-label" style="display: flex; align-items: center; color: white; cursor: pointer;">
                                 <input type="checkbox" name="terms" required style="margin-right: 0.5rem;">
                                 <span style="font-size: 0.9rem;">I agree to the terms and conditions</span>
                             </label>
@@ -572,7 +621,7 @@
     </footer>
     
     <!-- ===== JAVASCRIPT ===== -->
-    <script>
+<script>
         // Mobile Menu Toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -633,5 +682,8 @@
             observer.observe(el);
         });
     </script>
+    <script src="js/theme-toggle.js"></script>
 </body>
 </html>
+
+
