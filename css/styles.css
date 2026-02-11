@@ -3671,7 +3671,7 @@ p.text-light,
 
 .register-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 460px;
     position: relative;
     z-index: 2;
 }
@@ -3680,7 +3680,7 @@ p.text-light,
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95));
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: var(--spacing-xxl);
+    padding: var(--spacing-xl);
     border: 1px solid var(--border-light);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -3700,6 +3700,20 @@ p.text-light,
 .register-header {
     margin-bottom: var(--spacing-xl);
     text-align: center;
+}
+
+.auth-card-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.auth-card-brand:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 6px;
+    border-radius: 12px;
 }
 
 .register-logo {
@@ -4025,6 +4039,33 @@ p.text-light,
     margin: 0;
 }
 
+.auth-social {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    margin: 1rem 0 1.25rem;
+}
+
+.auth-social-link {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    color: var(--text-light);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+}
+
+.auth-social-link:hover,
+.auth-social-link:focus-visible {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.12);
+}
+
 .login-link {
     color: var(--accent-gold);
     text-decoration: none;
@@ -4104,7 +4145,7 @@ p.text-light,
 
 .login-container {
     width: 100%;
-    max-width: 450px;
+    max-width: 420px;
     position: relative;
     z-index: 2;
 }
@@ -4113,7 +4154,7 @@ p.text-light,
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95));
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: var(--spacing-xxl);
+    padding: var(--spacing-xl);
     border: 1px solid var(--border-light);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -4694,7 +4735,12 @@ p.text-light,
 }
 
 .audition-terms-label input[type="checkbox"] {
+    width: auto !important;
+    min-width: 16px;
+    height: 16px;
     margin: 0.2rem 0 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto;
 }
 
 /* Issue 17: Training program CTA centering */
@@ -4732,6 +4778,29 @@ p.text-light,
     cursor: pointer;
 }
 
+/* Keep booking-form native input buttons clearly visible */
+.tickets-page .booking-form input[type="number"] {
+    appearance: auto;
+    -moz-appearance: auto;
+}
+
+.tickets-page .booking-form input[type="number"]::-webkit-outer-spin-button,
+.tickets-page .booking-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: inner-spin-button;
+    opacity: 1;
+}
+
+.tickets-page .booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1 !important;
+    display: block;
+}
+
+.tickets-page .booking-form .cta-button.register {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)) !important;
+    color: var(--primary-dark) !important;
+    border: 2px solid var(--accent-gold) !important;
+}
+
 /* Issue 20: Special offers heading/button centering */
 .tickets-page .offers-text {
     display: flex;
@@ -4753,7 +4822,8 @@ p.text-light,
 
 /* Issue 21: Contact form submit button centered */
 .contact-page .submit-button-animated {
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -4773,6 +4843,25 @@ p.text-light,
 }
 
 /* Issue 24 + 25 + 26: Login/Register overlap and form alignment */
+.login-page .cinematic-header,
+.login-page .mobile-menu-panel,
+.login-page .mobile-menu-overlay,
+.register-page .cinematic-header,
+.register-page .mobile-menu-panel,
+.register-page .mobile-menu-overlay {
+    display: none !important;
+}
+
+.login-page .login-hero,
+.register-page .register-hero {
+    margin-top: 0 !important;
+}
+
+.login-page .main-navigation,
+.register-page .main-navigation {
+    display: none !important;
+}
+
 .login-page .password-input-wrapper input,
 .register-page .password-input-wrapper input {
     padding-right: 3rem !important;
@@ -4786,17 +4875,33 @@ p.text-light,
     gap: 1rem !important;
 }
 
-.login-page .checkbox-label,
-.register-page .checkbox-label {
+.login-page .checkbox-label {
     align-items: center !important;
     padding-left: 1.6rem !important;
     color: var(--text-light);
 }
 
-.login-page .checkbox-label .checkmark,
-.register-page .checkbox-label .checkmark {
+.login-page .checkbox-label .checkmark {
     top: 50% !important;
     transform: translateY(-50%);
+}
+
+.register-page .form-options {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+}
+
+.register-page .checkbox-label {
+    align-items: flex-start !important;
+    padding-left: var(--spacing-lg) !important;
+    color: var(--text-light);
+}
+
+.register-page .checkbox-label .checkmark {
+    top: 2px !important;
+    transform: none !important;
 }
 
 .interest-item input[type="checkbox"]:checked~.checkmark::after,
@@ -4812,6 +4917,8 @@ p.text-light,
     border: 1px solid var(--border-light);
     background: transparent;
     color: var(--text-light);
+    appearance: none;
+    -webkit-appearance: none;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -4820,6 +4927,8 @@ p.text-light,
     padding: 0.4rem 0.65rem;
     font-size: 0.82rem;
     font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
     transition: all 0.25s ease;
 }
 
@@ -4828,6 +4937,31 @@ p.text-light,
     color: var(--accent-gold);
     border-color: var(--accent-gold);
     background: rgba(212, 175, 55, 0.12);
+}
+
+.mode-toggle:focus {
+    outline: none;
+}
+
+.mode-toggle:focus-visible {
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.28);
+}
+
+.mode-toggle:active {
+    transform: none;
+}
+
+.mode-toggle .mode-toggle-icon {
+    width: 1rem;
+    min-width: 1rem;
+    height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode-toggle .mode-toggle-icon i {
+    line-height: 1;
 }
 
 .mode-toggle .mode-toggle-label {
@@ -4988,8 +5122,9 @@ body.light-mode .mobile-menu-overlay {
 
 @media (max-width: 768px) {
     .login-page .form-options {
-        flex-wrap: wrap !important;
-        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
 
     .hero-title-home2 {
@@ -5155,10 +5290,14 @@ main .ticket-content .cta-button {
 
 /* Center logo groups consistently */
 .cinematic-header .brand-identity,
-.mobile-menu-header .brand-identity,
-.cinematic-footer .brand-identity {
+.mobile-menu-header .brand-identity {
     justify-content: center !important;
     text-align: center;
+}
+
+.cinematic-footer .brand-identity {
+    justify-content: flex-start !important;
+    text-align: left;
 }
 
 /* Light mode contrast hardening for inline dark blocks and inline white text */
@@ -5231,5 +5370,115 @@ body.light-mode .audition-schedule-table td {
         display: table !important;
         min-width: 760px;
         white-space: nowrap;
+    }
+}
+
+/* Issue 24 + 25: mobile overlap fixes and dashboard menu alignment */
+@media (max-width: 768px) {
+    /* Home page community section: prevent text/stats overlap */
+    main .community-content {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    main .community-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+
+    main .community-text h2 {
+        font-size: clamp(2rem, 10vw, 2.6rem) !important;
+        line-height: 1.18 !important;
+    }
+
+    main .community-text p {
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+    }
+
+    main .community-stats .stat-number {
+        font-size: clamp(2rem, 9vw, 2.35rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    main .community-stats .stat-label {
+        line-height: 1.35 !important;
+    }
+
+    /* Shows page hero: reduce stack/collision in mobile view */
+    .shows-page .hero-section {
+        height: auto !important;
+        min-height: 72vh;
+        padding: 4.5rem 0 3rem;
+    }
+
+    .shows-page .hero-section .hero-animation,
+    .shows-page .hero-section .light-beams {
+        display: none !important;
+    }
+
+    .shows-page .hero-content h1 {
+        font-size: clamp(2.2rem, 12vw, 3rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .shows-page .hero-content p {
+        font-size: clamp(1.05rem, 5.2vw, 1.35rem) !important;
+        line-height: 1.4 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .shows-page .hero-content .cta-button {
+        width: min(100%, 250px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Tickets page: keep seat map inside narrow screens */
+    .tickets-page .seat-animated {
+        width: 20px;
+        height: 20px;
+        border-width: 1px;
+        border-radius: 4px;
+    }
+
+    /* Dashboard page: keep hamburger in top-right corner */
+    .dashboard-page .header-container {
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        align-items: center !important;
+    }
+
+    .dashboard-page .action-buttons {
+        display: none !important;
+    }
+
+    .dashboard-page .mobile-menu-toggle {
+        display: flex !important;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+        margin: 0 !important;
+    }
+
+    .dashboard-page .cinematic-header .brand-identity {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .shows-page .hero-section {
+        min-height: 68vh;
+        padding: 4rem 0 2.5rem;
+    }
+
+    .tickets-page .seat-animated {
+        width: 18px;
+        height: 18px;
     }
 }
