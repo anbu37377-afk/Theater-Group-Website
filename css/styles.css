@@ -556,6 +556,17 @@ p {
     padding: var(--spacing-md);
 }
 
+.mobile-menu-actions .mode-toggle {
+    width: 100%;
+    justify-content: center;
+    padding: var(--spacing-md);
+    min-height: 48px;
+}
+
+.mobile-menu-actions .mode-toggle .mode-toggle-label {
+    display: inline;
+}
+
 /* ===== MOBILE MENU OVERLAY ===== */
 .mobile-menu-overlay {
     position: fixed;
@@ -3660,7 +3671,7 @@ p.text-light,
 .register-hero {
     min-height: 100vh;
     background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(26, 26, 26, 0.95)),
-        url('/assets/images/register/hero.jpg') center/cover;
+        url('../assets/images/register/hero.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3714,6 +3725,39 @@ p.text-light,
     outline: 2px solid var(--accent-gold);
     outline-offset: 6px;
     border-radius: 12px;
+}
+
+.auth-card-brand .auth-logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    font-size: var(--font-3xl);
+    color: var(--primary-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-card-brand .auth-logo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: logoShimmer 3s infinite;
+}
+
+.auth-mode-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-md);
 }
 
 .register-logo {
@@ -4099,6 +4143,12 @@ p.text-light,
 }
 
 @media (max-width: 480px) {
+    .auth-card-brand .auth-logo {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-2xl);
+    }
+
     .register-hero {
         padding: var(--spacing-lg) var(--spacing-md);
         margin-top: 65px;
@@ -4134,7 +4184,7 @@ p.text-light,
 .login-hero {
     min-height: 100vh;
     background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(26, 26, 26, 0.95)),
-        url('/assets/images/login/hero.jpg') center/cover;
+        url('../assets/images/login/hero.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4555,6 +4605,12 @@ p.text-light,
 .features-grid .feature-item h3 {
     order: -1;
     margin-top: 0 !important;
+    min-height: 4.8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .testimonials-grid {
@@ -4575,6 +4631,16 @@ p.text-light,
 
 .testimonials-grid .testimonial-author {
     margin-top: auto;
+}
+
+/* Home page testimonials: center reviewer name block */
+.audience-testimonials .testimonials-grid .testimonial-author {
+    justify-content: center;
+    width: 100%;
+}
+
+.audience-testimonials .testimonials-grid .testimonial-author>div {
+    text-align: center;
 }
 
 /* Issue 3 + 5: Ensure single CTA buttons remain centered */
@@ -4708,6 +4774,16 @@ p.text-light,
     display: inline-flex;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Shows page CTA section: keep action buttons centered together */
+.shows-page .cta-section .cta-buttons {
+    justify-content: center !important;
+}
+
+.shows-page .cta-section .cta-buttons .cta-button {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 /* Issue 15: Audition steps in consistent cards */
@@ -4869,6 +4945,7 @@ p.text-light,
 
 .login-page .form-options {
     display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
     flex-wrap: nowrap !important;
@@ -4989,6 +5066,9 @@ p.text-light,
 body.light-mode {
     --primary-dark: #f4f1e8;
     --secondary-dark: #ffffff;
+    --surface-soft: #f8f5ec;
+    --surface-card: #ffffff;
+    --surface-input: #ffffff;
     --text-light: #1f1f1f;
     --text-gray: #565656;
     --border-light: rgba(0, 0, 0, 0.18);
@@ -5048,6 +5128,33 @@ body.light-mode .mobile-menu-overlay {
     .tickets-page .seating-card img,
     .auditions-page .training-image img {
         min-height: 220px;
+    }
+
+    /* Tickets page tablet/mobile: prevent flip-card text clipping */
+    .tickets-page .ticket-flip-container {
+        height: auto;
+    }
+
+    .tickets-page .ticket-flip-card {
+        height: auto;
+        transform: none !important;
+    }
+
+    .tickets-page .ticket-front {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+
+    .tickets-page .ticket-back {
+        display: none;
+    }
+
+    /* Shows page: keep current production cards visible on tablet/mobile */
+    .shows-page .show-card-horizontal {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
 
     /* Issue 31: Keep tables readable with horizontal scroll where present */
@@ -5288,11 +5395,12 @@ main .ticket-content .cta-button {
     margin-top: auto;
 }
 
-/* Center logo groups consistently */
+/* Keep logo groups consistently left-aligned */
 .cinematic-header .brand-identity,
 .mobile-menu-header .brand-identity {
-    justify-content: center !important;
-    text-align: center;
+    justify-content: flex-start !important;
+    justify-self: start !important;
+    text-align: left !important;
 }
 
 .cinematic-footer .brand-identity {
@@ -5314,13 +5422,70 @@ body.light-mode [style*="background:#2a2a2a"] {
     border-color: rgba(0, 0, 0, 0.14) !important;
 }
 
+body.light-mode [style*="background-color: #0a0a0a"],
+body.light-mode [style*="background-color:#0a0a0a"],
+body.light-mode [style*="background-color: #1a1a1a"],
+body.light-mode [style*="background-color:#1a1a1a"] {
+    background-color: #f8f5ec !important;
+}
+
+body.light-mode [style*="background-color: #2a2a2a"],
+body.light-mode [style*="background-color:#2a2a2a"] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.14) !important;
+}
+
 body.light-mode [style*="color: white"],
 body.light-mode [style*="color:white"] {
     color: #1f1f1f !important;
 }
 
+body.light-mode [style*="color: #fff"],
+body.light-mode [style*="color:#fff"],
+body.light-mode [style*="color: #ffffff"],
+body.light-mode [style*="color:#ffffff"] {
+    color: #1f1f1f !important;
+}
+
+body.light-mode .sidebar-card,
+body.light-mode .stat-card,
+body.light-mode .activity-card,
+body.light-mode .chart-card,
+body.light-mode .booking-card,
+body.light-mode .favorite-card,
+body.light-mode .settings-card,
+body.light-mode .show-content,
+body.light-mode .audition-content,
+body.light-mode .ticket-content,
+body.light-mode .contact-content,
+body.light-mode .feature-item,
+body.light-mode .highlight-item,
+body.light-mode .testimonial-card,
+body.light-mode .benefit-item,
+body.light-mode .auditions-page .steps-content .step-item,
+body.light-mode .audition-schedule-table {
+    background: var(--surface-card) !important;
+    border-color: rgba(0, 0, 0, 0.14) !important;
+}
+
 body.light-mode .text-light {
     color: #1f1f1f !important;
+}
+
+/* Keep hero copy readable over image backgrounds across pages */
+.hero-section .text-light,
+.hero-section-home2 .text-light,
+.hero-title-home2,
+.hero-subtitle-home2 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+body.light-mode .hero-section .text-light,
+body.light-mode .hero-section-home2 .text-light,
+body.light-mode .hero-title-home2,
+body.light-mode .hero-subtitle-home2 {
+    color: #ffffff !important;
 }
 
 body.light-mode .text-gray {
@@ -5345,9 +5510,17 @@ body.light-mode .form-group input,
 body.light-mode .form-group select,
 body.light-mode .form-group textarea,
 body.light-mode .form-field-animated {
-    background: #ffffff !important;
+    background: var(--surface-input) !important;
     color: #1f1f1f !important;
     border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+body.light-mode .tickets-page input[type="date"] {
+    color-scheme: light;
+}
+
+body.light-mode .tickets-page input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: none;
 }
 
 body.light-mode .audition-schedule-table {
@@ -5434,6 +5607,50 @@ body.light-mode .audition-schedule-table td {
         width: min(100%, 250px) !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+
+    /* Shows page mobile: prevent text/cards from overflowing due fixed inline min widths */
+    .shows-page .shows-grid,
+    .shows-page .upcoming-shows,
+    .shows-page .cast-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Auditions page mobile: prevent text/cards from overflowing fixed inline min widths */
+    .auditions-page .auditions-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Auditions page mobile: align step progress text cleanly */
+    .auditions-page .step-progress {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .auditions-page .step-progress .step-item {
+        min-width: 0;
+        text-align: center;
+    }
+
+    .auditions-page .step-progress .step-item h4 {
+        font-size: clamp(1rem, 4.8vw, 1.2rem) !important;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    /* Auditions page mobile: keep "How to Audition" step cards visible */
+    .auditions-page .steps-content .step-item {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    /* Tickets page mobile: show full special-offers image without cropping */
+    .tickets-page .offers-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
     }
 
     /* Tickets page: keep seat map inside narrow screens */
