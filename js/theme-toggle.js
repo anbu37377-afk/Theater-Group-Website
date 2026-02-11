@@ -79,6 +79,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         ensureToggleExists(".action-buttons");
         ensureToggleExists(".mobile-menu-actions");
+        ensureToggleExists(".auth-mode-toggle");
 
         var currentTheme = applyTheme(getInitialTheme());
 
