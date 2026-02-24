@@ -78,6 +78,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         ensureToggleExists(".action-buttons");
+        ensureToggleExists(".header-right");
         ensureToggleExists(".mobile-menu-actions");
         ensureToggleExists(".auth-mode-toggle");
 

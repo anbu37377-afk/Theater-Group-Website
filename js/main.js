@@ -1,47 +1,47 @@
-// Main JavaScript for Royal Theater Group Website
+// Main JavaScript for Royal Theater Website
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileMenuClose = document.getElementById('mobileMenuClose');
     const mobileMenuPanel = document.getElementById('mobileMenuPanel');
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-    
+
     function openMobileMenu() {
         mobileMenuPanel.classList.add('active');
         mobileMenuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-    
+
     function closeMobileMenu() {
         mobileMenuPanel.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
-    
+
     // Open menu
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', openMobileMenu);
     }
-    
+
     // Close menu
     if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', closeMobileMenu);
     }
-    
+
     // Close menu when clicking overlay
     if (mobileMenuOverlay) {
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     }
-    
+
     // Close menu when clicking on nav links
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
-    
+
     // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && mobileMenuPanel.classList.contains('active')) {
             closeMobileMenu();
         }
@@ -50,18 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Testimonials Slider
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     let currentTestimonial = 0;
-    
+
     function showTestimonial(index) {
         testimonialCards.forEach((card, i) => {
             card.classList.toggle('active', i === index);
         });
     }
-    
+
     function nextTestimonial() {
         currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
         showTestimonial(currentTestimonial);
     }
-    
+
     // Auto-rotate testimonials every 5 seconds
     if (testimonialCards.length > 0) {
         setInterval(nextTestimonial, 5000);
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header scroll effect
     const header = document.querySelector('.header');
     let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset;
-        
+
         if (header) {
             if (currentScroll > 100) {
                 header.style.background = 'rgba(26, 26, 26, 0.95)';
@@ -97,14 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.style.backdropFilter = 'none';
             }
         }
-        
+
         lastScroll = currentScroll;
     });
 
     // Active navigation highlighting
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-menu a');
-    
+
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
         if (linkPage === currentPage) {
@@ -117,18 +117,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation (for contact, login, register forms)
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Basic validation
             const requiredFields = form.querySelectorAll('[required]');
             let isValid = true;
-            
+
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     isValid = false;
                     field.classList.add('error');
-                    
+
                     // Show error message
                     const errorMsg = field.parentNode.querySelector('.error-message');
                     if (!errorMsg) {
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
-            
+
             if (isValid) {
                 // Show success message
                 showNotification('Form submitted successfully!', 'success');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: transform 0.3s ease;
             max-width: 300px;
         `;
-        
+
         if (type === 'success') {
             notification.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
         } else if (type === 'error') {
@@ -182,14 +182,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             notification.style.background = 'linear-gradient(135deg, #d4af37, #b8941f)';
         }
-        
+
         document.body.appendChild(notification);
-        
+
         // Animate in
         setTimeout(() => {
             notification.style.transform = 'translateX(0)';
         }, 100);
-        
+
         // Remove after 3 seconds
         setTimeout(() => {
             notification.style.transform = 'translateX(400px)';
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const bookButtons = document.querySelectorAll('.btn-primary[href*="tickets"]');
     bookButtons.forEach(button => {
         if (!button.getAttribute('href').includes('http')) {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 e.preventDefault();
                 const showTitle = this.closest('.show-card')?.querySelector('h3')?.textContent;
                 if (showTitle) {
@@ -219,34 +219,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seat selection functionality (for ticket booking)
     const seats = document.querySelectorAll('.seat');
     let selectedSeats = [];
-    
+
     seats.forEach(seat => {
-        seat.addEventListener('click', function() {
+        seat.addEventListener('click', function () {
             const seatNumber = this.getAttribute('data-seat');
-            
+
             if (this.classList.contains('occupied')) {
                 showNotification('This seat is already occupied', 'error');
                 return;
             }
-            
+
             this.classList.toggle('selected');
-            
+
             if (this.classList.contains('selected')) {
                 selectedSeats.push(seatNumber);
             } else {
                 selectedSeats = selectedSeats.filter(seat => seat !== seatNumber);
             }
-            
+
             updateSeatCount();
         });
     });
-    
+
     function updateSeatCount() {
         const seatCount = document.querySelector('.seat-count');
         if (seatCount) {
             seatCount.textContent = selectedSeats.length;
         }
-        
+
         const totalPrice = document.querySelector('.total-price');
         if (totalPrice) {
             const price = selectedSeats.length * 50; // $50 per seat
@@ -258,25 +258,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function startCountdown(elementId, endDate) {
         const element = document.getElementById(elementId);
         if (!element) return;
-        
+
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = endDate - now;
-            
+
             if (distance < 0) {
                 element.innerHTML = "EXPIRED";
                 clearInterval(countdownInterval);
                 return;
             }
-            
+
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
+
             element.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
-        
+
         const countdownInterval = setInterval(updateCountdown, 1000);
         updateCountdown();
     }
@@ -289,11 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Loading animation for page transitions
-    window.addEventListener('beforeunload', function() {
+    window.addEventListener('beforeunload', function () {
         document.body.style.opacity = '0';
     });
-    
-    window.addEventListener('load', function() {
+
+    window.addEventListener('load', function () {
         document.body.style.transition = 'opacity 0.3s ease';
         document.body.style.opacity = '1';
     });
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Print ticket functionality
     const printButtons = document.querySelectorAll('.print-ticket');
     printButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             window.print();
         });
     });
@@ -309,10 +309,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Share functionality
     const shareButtons = document.querySelectorAll('.share-btn');
     shareButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             if (navigator.share) {
                 navigator.share({
-                    title: 'Royal Theater Group',
+                    title: 'Royal Theater',
                     text: 'Check out these amazing shows!',
                     url: window.location.href
                 });
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Accessibility improvements
     const skipLinks = document.querySelectorAll('.skip-link');
     skipLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -339,14 +339,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Keyboard navigation for mobile menu
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
         }
     });
 
-    console.log('Royal Theater Group Website loaded successfully!');
+    console.log('Royal Theater Website loaded successfully!');
 });
 
 // Utility functions
@@ -411,22 +411,22 @@ async function apiCall(endpoint, options = {}) {
             'Content-Type': 'application/json',
         }
     };
-    
+
     const token = getFromLocalStorage('token');
     if (token) {
         defaultOptions.headers['Authorization'] = `Bearer ${token}`;
     }
-    
+
     const finalOptions = { ...defaultOptions, ...options };
-    
+
     try {
         const response = await fetch(endpoint, finalOptions);
         const data = await response.json();
-        
+
         if (!response.ok) {
             throw new Error(data.message || 'API call failed');
         }
-        
+
         return data;
     } catch (error) {
         console.error('API Error:', error);
