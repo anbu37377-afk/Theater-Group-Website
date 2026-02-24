@@ -625,8 +625,8 @@ p {
     }
 }
 
-/* Mobile View (max-width: 768px) */
-@media (max-width: 768px) {
+/* Tablet + Mobile View (max-width: 1024px) */
+@media (max-width: 1024px) {
     .header-container {
         grid-template-columns: 1fr auto;
         padding: 0 var(--spacing-md);
@@ -5090,7 +5090,7 @@ p.text-light,
     display: inline-flex !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .action-buttons .mode-toggle {
         display: none !important;
     }
